@@ -1,21 +1,26 @@
-*{
-    margin: 0;
-}
+
 .navbar{
     text-decoration: none;
     /* display: inline; */
-    float: left;
-   
+    /* float: left; */
+   margin-top: 50px;
+   /* clear: both; */
 }
 .header li{
     display: inline;
-    padding-right: 10px ;
+    padding-right: 10px;
 }
 .sign{
     float: right;
    
 }
+.logo{
+    float: left;
+    margin-right: 100px;
+    clear: left;
+    margin-top:0 ;
+}
 .menu{
-    background-color: blue;
+    
    
 }
