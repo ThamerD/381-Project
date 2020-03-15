@@ -3,16 +3,36 @@
     text-decoration: none;
     /* display: inline; */
     /* float: left; */
-   margin-top: 50px;
+    padding-top: 35px;
    /* clear: both; */
+}
+body{
+    background: radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #ff94fb, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.header{
+   background-color: #333;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0,0,0,35%);
+margin: 0px;
+    position: fixed;
+    
 }
 .header li{
     display: inline;
-    padding-right: 10px;
+    padding-right: 15px;
+    opacity: 100%;
+}
+.header li a{
+    text-decoration: none;
 }
 .sign{
     float: right;
-   
+    
 }
 .logo{
     float: left;
@@ -20,7 +40,29 @@
     clear: left;
     margin-top:0 ;
 }
+.sign{
+    margin-right:10px;
+    border-radius: 5px;
+    text-align: center;
+    border: solid 1px rgb(126,135,216);
+    background-color: rgb(126,135,216);
+    color: black;
+    padding: 5px;
+    float: right;
+}
 .menu{
+    border-radius: 5px;
+    text-align: center;
+    /* border: solid 1px greenyellow;
+    background-color: greenyellow; */
+    color: black;
+    padding: 5px;
+    float: left;
     
-   
+    margin-right: 10px;
+}
+.sign:hover{
+    border: solid 1px green;
+    background-color: green;
+    color: white;
 }
