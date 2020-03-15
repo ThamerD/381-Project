@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+.navbar{
+    text-decoration: none;
+    /* display: inline; */
+    float: left;
+   
+}
+.header li{
+    display: inline;
+    padding-right: 10px ;
+}
+.sign{
+    float: right;
+   
+}
+.menu{
+    background-color: blue;
+   
+}
