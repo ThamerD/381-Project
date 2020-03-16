@@ -3,7 +3,7 @@
     text-decoration: none;
     /* display: inline; */
     /* float: left; */
-    padding-top: 35px;
+    padding-top: 5px;
    /* clear: both; */
 }
 body{
@@ -17,7 +17,7 @@ body{
 }
 .header{
    background-color: #333;
-    height: 100px;
+    height: 2cm;
     width: 100%;
     background-color: rgba(0,0,0,15%);
     margin-top: 0px;
@@ -33,30 +33,35 @@ body{
     /* opacity: 100%; */
 }
 .header ul{
-    padding-left:40% ;
+    padding-left:30% ;
 }
 .header li a{
+    
     text-decoration: none;
+    /* color: white; */
+
 }
 .sign{
     float: right;
+    font-size: 17px;
+
     
 }
 .logo{
     float: left;
-    margin-right: 100px;
+    margin-right: 1cm;
     clear: left;
     margin-top:0 ;
 }
 .sign{
-    margin-right:10px;
+    margin-right:.4cm;
     border-radius: 5px;
     text-align: center;
     /* border: solid 1px rgb(126,135,216); */
     /* background-color: rgb(126,135,216); */
     background-color: white;
     border: solid 1px white;
-    color: black;
+    color: #333;
     padding: 5px;
     float: right;
 }
@@ -69,7 +74,7 @@ body{
     padding: 5px;
     float: left;
     
-    margin-right: 10px;
+    margin-right: 25px;
 }
 .sign:hover{
     border: solid 1px rgb(126,135,216);
