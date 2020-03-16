@@ -3,9 +3,8 @@
     text-decoration: none;
     /* display: inline; */
     /* float: left; */
-    padding-top: 35px;
+    padding-top: 5px;
    /* clear: both; */
-   color: white;
 }
 body{
     background: radial-gradient(circle at 94.02% 88.03%, #2882e9, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #1ce799, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
@@ -13,48 +12,52 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-    color: white;
 
 }
 .header{
    background-color: #333;
-    height: 100px;
+    height: 2cm;
     width: 100%;
     background-color: rgba(0,0,0,35%);
     margin: 0px;
     position: fixed;
-    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 20px;
+
 
     
 }
 .header li{
     display: inline;
-    padding-right: 15px;
+    padding-right: 20px;
     opacity: 100%;
-    color: white;
 
 }
 .header li a{
+    
     text-decoration: none;
     color: white;
 
 }
 .sign{
     float: right;
+    font-size: 17px;
+
     
 }
 .logo{
     float: left;
-    margin-right: 100px;
+    margin-right: 1cm;
     clear: left;
     margin-top:0 ;
 }
 .sign{
-    margin-right:10px;
+    margin-right:.4cm;
     border-radius: 5px;
     text-align: center;
-    border: solid 1px rgb(126,135,216);
-    background-color: rgb(126,135,216);
+    border: solid 1.5px #1ce799c2;
+    /* background-color: rgb(126,135,216); */
+    
     color: black;
     padding: 5px;
     float: right;
@@ -68,10 +71,10 @@ body{
     padding: 5px;
     float: left;
     
-    margin-right: 10px;
+    margin-right: 25px;
 }
 .sign:hover{
-    border: solid 1px green;
-    background-color: green;
+    border: solid 1.5px #1ce799c2;
+    background-color: #1ce799c2;
     color: white;
 }
