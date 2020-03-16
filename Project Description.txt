@@ -4,16 +4,52 @@ The project aims to implement a web application to facilitate buying and selling
 For a guest user
 
 -Sign up/sign in/Sign out
-
+*Sign Up*
+{
+    First name and Last name
+    username
+    email
+    mobile number
+    password
+    confirmPassword
+}
 -Search things to buy with minimal description (login not required)
-
+*Search*
+{
+    that means when he/she looking for car everything releted to car display or any product have keyword car in subject display
+}
 For a logged in user
 
 -Search for things to buy  with full description (price, age, ODO if car to buy, etc.) including images (login required)
+{
+    price: between x and y (x<=price<=y)
+}
 
 -Express the interest in things to buy to get the seller contact information displayed  (login required)
+{
+    every user have profile.
+}
 
 -Communicate with the seller by text messages (if the interest is already expressed by the potential buyer) (login required)
 
 -Manage things to sell: See interests, Add (including description and images), Edit and Delete.  (login required)
+{
+-Add product
+<
+1.Subject of product
+2.Type of product if car (brand of car(BMW),car name(730li), age of car(2017),odo(12222 km))
+3.price
+4.description
+5.images(if exists)
+6. buyer or seller
+>
+-Edit
+<
+* only what he/she is added
+>
+-Delete
+<
+* only what he/she is added
+>
+}
 
