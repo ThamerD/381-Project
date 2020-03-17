@@ -1,19 +1,24 @@
-
-.navbar{
-    text-decoration: none;
-    /* display: inline; */
-    /* float: left; */
-    padding-top: 5px;
-   /* clear: both; */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto' 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body{
     /* background: radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #ff94fb, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%); */
-    background-color: #54a4ff;
+    /* background-color: #54a4ff; */
+    /* font-family: 'Roboto' 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    background: radial-gradient(circle at 94.02% 88.03%, #2882e9, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #1ce799, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
     background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
     padding: 0;
     /* text-align: center; */
+}
+.navbar{
+    text-decoration: none;
+    /* display: inline; */
+    /* float: left; */
+    padding-top: 5px;
+    /* clear: both; */
 }
 .header{
    background-color: #333;
@@ -21,11 +26,10 @@ body{
     width: 100%;
     background-color: rgba(0,0,0,15%);
     margin-top: 0px;
-    position: relative;
+    position: fixed;
 
-    top: -15px;
+    top: 0px;
     /* clear: both; */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .header li{
     display: inline;
@@ -59,9 +63,9 @@ body{
     text-align: center;
     /* border: solid 1px rgb(126,135,216); */
     /* background-color: rgb(126,135,216); */
-    background-color: white;
-    border: solid 1px white;
-    color: #333;
+    /* background-color: #1ce799c2; */
+    border: solid 1px #1ce799c2;
+    color: white;
     padding: 5px;
     float: right;
 }
@@ -77,8 +81,8 @@ body{
     margin-right: 25px;
 }
 .sign:hover{
-    border: solid 1px rgb(126,135,216);
-    background-color: rgb(95, 108, 230);;
+    border: solid 1px #1ce799c2;
+    background-color: #1ce799c2;
     color: white;
 }
 .menu:hover{
@@ -88,7 +92,8 @@ body{
     border-radius: 0;;
 }
 .coBody{
-    margin-left:10% ;
+    padding: 70px;
+    margin-left:6% ;
     margin-right:10% ;
     padding: 3%;
     text-align: center;
@@ -99,5 +104,110 @@ body{
     width: 80%;
     overflow: auto;
     position: relative;
-    z-index: -1;
+    top: 80px;
+    /* z-index: -1; */
+}
+.sideBar{
+    height: 100vh;
+    background-color: #333;
+    width: 250px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#close{
+    display: none;
+}
+#open{
+    display: none;
+}
+.btn{
+    border-radius: 6px;
+    border: solid 1px rgb(119, 136, 153);
+    background: rgb(119, 136, 153);
+    color: white;
+    padding: 8px;
+    width: 80px;
+    margin: 10px ;
+}
+.btn:hover{
+border:#2882e9 solid 1px ;
+background: #00499c;
+}
+.text-F{
+    background-color: rgba(243, 243, 243, 0.507);
+margin: 5px;
+border: 1px solid #222;
+border-radius: 2px;
+color: black;
+width: 4cm;
+height: 0.5cm;
+box-shadow: black 2px;
+/* z-index: 1024; */
+}
+@media only screen and (max-width:1199px){
+    .navbar{
+        float: left;
+        height: 100vh;
+        background: #333;
+        /* background-color: #ff94fb; */
+        color: aliceblue;
+        z-index: 1023;
+        margin: 0;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        list-style-type: none;
+        padding-left: 0px;
+        padding-top: 50px;
+        display: none;
+        padding-right:0px ;
+    }
+    .menu,.sign{
+        float: none;
+        border: none;
+        border-radius: 0px;        
+        background-color: #333;
+        color: white;
+        
+    }
+  .menu:hover,.sign:hover{
+    color: white;
+    background-color: #222;  
+    border: none;
+  }
+    .header li a{
+        display: block;
+        padding-right: 0px;
+        padding-left: 0px;
+        /* opacity: 100%; */
+    }
+  .header ul li{
+      width: 100%;
+  }
+    .header ul{
+        /* background-color:aqua ; */
+        padding: 0px;
+        /* text-align: center; */
+        padding-top: 50px;
+        /* width: 100%; */
+        /* margin: 0; */
+}
+#close{
+    display: inline;
+    position: relative;
+    top: -25px;
+    left: 15px;
+    cursor: pointer;
+    color: white;
+}
+#open{
+    display: inline;
+position: absolute;
+top: 30px;
+right: 30px;
+cursor: pointer;
+}
 }

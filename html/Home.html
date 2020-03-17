@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../css/style_e.css">
+    
 </head>
 
 <body>
+    
     <div class="header">
         <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
         <div class="logo">
             <a href="#"><img src="../img/logo.png" width="70px" height="80px" style="margin-top: 0px; margin-left: 0.5cm;" alt="logo"></a>
         </div>
         <div>
-            <ul class="navbar" >
-
+            
+            <img onclick="OpenNav()" width="30px" height="20px" id="open" src="../img/menu_icon.png" alt="">
+            <ul class="navbar" id="nav">
+            <span onclick="closeNav()" id="close">X</span>
 
                 <li><a class="menu" href="#">Electronics</a></li>
                 <li><a class="menu" href="#">Cars</a></li>
@@ -35,12 +39,23 @@
         </div>
     </div>
     <div class="coBody">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-Impedit deserunt reprehenderit labore tempora soluta. 
-Itaque voluptatem, quaerat libero eius voluptatibus odio,
- similique, delectus aspernatur veniam sint nam ratione commodi nulla?
- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et non dolore nulla quibusdam odit atque beatae, tempore, reprehenderit magnam perferendis voluptatum 
-     ipsum nihil unde dolorum asperiores iste velit natus soluta!</p>
+        
+        <input type="email" name="" id="" class="text-F" placeholder="email">
+        <br>
+        <input type="password" name="" id="" class="text-F" placeholder="Password"><br>
+<input type="submit" class="btn">
     </div>
+    
+<script>
+    var x=document.getElementById("nav");
+        function closeNav(){
+           x.style.width="0px";
+           x.style.display="none"
+        }
+        function OpenNav(){
+            x.style.width="200px";
+           x.style.display="inline"
+        }
+</script>
 </body>
 </html>
