@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style_e.css">
+    
+</head>
+
+<body>
+    
+    <div class="header">
+        <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
+        <div class="logo">
+            <a href="#"><img src="../img/logo.png" width="70px" height="80px" style="margin-top: 0px; margin-left: 0.5cm;" alt="logo"></a>
+        </div>
+        <div>
+            
+            <img onclick="OpenNav()" width="30px" height="20px" id="open" src="../img/menu_icon.png" alt="">
+            <ul class="navbar" id="nav">
+            <span onclick="closeNav()" id="close">X</span>
+
+                <li><a class="menu" href="#">Electronics</a></li>
+                <li><a class="menu" href="#">Cars</a></li>
+                <li><a class="menu" href="#">Clothing</a></li>
+                <li><a class="menu" href="#">Furniture</a></li>
+                <li><a class="menu" href="#">Games</a></li>
+                <li><a class="menu" href="#">Movies</a></li>
+                <li><a class="menu" href="#">Books</a></li>
+                <li><a class="menu" href="#">About</a></li>
+                <li><a class="menu" href="#">Support</a></li>
+                <li><a class="sign" href="#">Sign Up</a></li>
+                <li><a class="sign" href="#">Sign In</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="coBody">
+        <label>Select a category</label>
+        <select id="category" onchange="checkSelection()" >
+            <option selected>Electronics</option>
+            <option>Cars</option>
+            <option>Clothing</option>
+            <option>Furniture</option>
+            <option>Games</option>
+            <option>Movies</option>
+            <option>Books</option>
+        </select>
+        <br>
+        <label id="test"></label>
+        <br>
+
+        <script>
+            function checkSelection() {
+                var sel = document.getElementById("category").selectedIndex;
+                document.getElementById("test").innerHTML="You've selected "+sel;
+}
+        </script>
+        <!-- Insert Inputs for each category-->
+        
+<input type="submit" class="btn">
+    </div>
+    
+<script>
+    var x=document.getElementById("nav");
+        function closeNav(){
+           x.style.width="0px";
+           x.style.display="none"
+        }
+        function OpenNav(){
+            x.style.width="200px";
+           x.style.display="inline"
+        }
+</script>
+</body>
+</html>
