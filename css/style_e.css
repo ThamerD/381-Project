@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 *{
-    font-family: 'Roboto' 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     /* background: radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #ff94fb, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%); */
@@ -12,6 +12,9 @@ body{
     margin: 0;
     padding: 0;
     /* text-align: center; */
+}
+label{
+    text-align: left;
 }
 .navbar{
     text-decoration: none;
@@ -59,14 +62,14 @@ body{
 }
 .sign{
     margin-right:.4cm;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     /* border: solid 1px rgb(126,135,216); */
     /* background-color: rgb(126,135,216); */
     /* background-color: #1ce799c2; */
     border: solid 1px #1ce799c2;
     color: white;
-    padding: 5px;
+    padding: 7px;
     float: right;
 }
 .menu{
@@ -77,6 +80,7 @@ body{
     color: white;
     padding: 5px;
     float: left;
+    font-size: 17px;
     
     margin-right: 25px;
 }
@@ -87,9 +91,9 @@ body{
 }
 .menu:hover{
     /* background-color: #333; */
-    color: #333;
-    border-bottom: 1px solid rgb(121, 171, 250);
-    border-radius: 0;;
+    color: #111;
+    border-bottom: 1px solid #1ce799c2;
+    border-radius: 0px;
 }
 .coBody{
     padding: 70px;
@@ -105,6 +109,7 @@ body{
     overflow: auto;
     position: relative;
     top: 80px;
+    font-size: 17px;
     /* z-index: -1; */
 }
 .sideBar{
@@ -124,16 +129,22 @@ body{
 }
 .btn{
     border-radius: 6px;
-    border: solid 1px rgb(119, 136, 153);
-    background: rgb(119, 136, 153);
+    /* border: solid 1px rgb(119, 136, 153); */
+    border: solid 1px rgb(10, 135, 255);
+    /* background: rgb(119, 136, 153); */
+    background: rgb(10, 135, 255);
     color: white;
     padding: 8px;
-    width: 80px;
-    margin: 10px ;
+    width: 75px;
+    margin: 10px;
+    font-size: 14px;
 }
 .btn:hover{
-border:#2882e9 solid 1px ;
-background: #00499c;
+/* border:#2882e9 solid 1px ; */
+border: rgb(10, 110, 200) solid 1px ;
+/* background: #00499c; */
+background: rgb(10, 110, 200);
+
 }
 .text-F{
     background-color: rgba(243, 243, 243, 0.507);
@@ -141,11 +152,27 @@ margin: 5px;
 border: 1px solid #222;
 border-radius: 2px;
 color: black;
-width: 4cm;
+width: 5cm;
 height: 0.5cm;
 box-shadow: black 2px;
 /* z-index: 1024; */
+padding: 3px;
+font-size: 15px;
 }
+
+.text-D{
+background-color: rgba(243, 243, 243, 0.507);
+margin-bottom: .5cm;
+border: 1px solid #222;
+border-radius: 2px;
+color: black;
+width: 5cm;
+padding: 3px;
+box-shadow: black 2px;
+height: 0.5cm;
+font-size: 15px;
+}
+
 @media only screen and (max-width:1199px){
     .navbar{
         float: left;
