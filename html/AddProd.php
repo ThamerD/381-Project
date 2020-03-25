@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Add a Product</title>
     <link rel="stylesheet" href="../css/style_e.css">
 
 </head>
@@ -61,13 +61,28 @@
                 var sel = document.getElementById("category").selectedIndex;
                 // This is for testing and will be deleted later
                 document.getElementById("test").innerHTML = "You've selected " + sel;
+                var wrap=document.getElementById("wrapper");
+                var carInfo ='<br><label for="brand">Brand:</label><input id="brand" type="text" class="text-D">' +
+                <br><label for="odo">Odo:</label><input id="odo" type="text" class="text-D">';
+                var cloInfo ='<br><label for="size">Size:</label><input id="size" type="text" class="text-D">';
+                switch(sel){
+                    case 0:
+                     wrap.innerHTML="";
+                     break;
+                    case 1:
+                    wrap.innerHTML=carInfo; 
+                    break;
+                    case 2: wrap.innerHTML=cloInfo; break;
+                    case 3:
+                    case 4:
+                }
             }
         </script>
 
         <form id="Product" style="width: 11cm; margin: auto;">
             <div style="float: left;">
                 <label for="name" style="display: block;">Name:</label>
-                <input id="name" type="text" class="text-D" block; style="width: 6.85cm;">
+                <input id="name" type="text" class="text-D" style="width: 6.85cm;">
             </div>
 
             <div style="float: right;">
@@ -82,6 +97,12 @@
             <br>
             <label for="images">Images:</label>
             <input id="images" type="file" multiple><br>
+
+            <div id="wrapper"></div>
+
+            <!-- <label for="brand">Brand:</label>
+            <input id="brand" type="text" class="text-D"> -->
+
             <input type="submit" class="btn">
             <!-- Add category-specific inputs such as ODR, assign required and optional information -->
         </form>
