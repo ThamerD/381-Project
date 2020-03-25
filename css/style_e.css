@@ -21,7 +21,8 @@ label {
 
 .navbar {
     text-decoration: none;
-    /* display: inline; */
+    display: inline;
+    /* float: none; */
     /* float: left; */
     padding-top: 5px;
     /* clear: both; */
@@ -115,6 +116,7 @@ label {
     border-radius: 6px;
     width: 80%;
     overflow: auto;
+    
     position: relative;
     top: 80px;
     font-size: 17px;
@@ -253,7 +255,9 @@ label {
     }
 }
 
+/* albra start */
 .divlogin {
+    padding-top:3% ;
     color: #333;
     background-color: rgba(245, 245, 245, 0.788);
     border-radius: 6px;
@@ -262,7 +266,8 @@ label {
     text-align: center;
     margin-top: 10%;
     margin-left: 35%;
-    overflow: auto;
+    /* overflow: auto; */
+    
 }
 
 .linklog {
@@ -279,5 +284,6 @@ label {
     text-align: left;
     margin-top: 10%;
     margin-left: 33%;
-    overflow: auto;
+    /* overflow: auto; */
 }
+/* albra end */

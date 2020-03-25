@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,9 +7,9 @@
     <title>Home</title>
     <link rel="stylesheet" href="../css/style_e.css">
 
-</head>
+</head> -->
 
-<body>
+<!-- <body> -->
 
     <div class="header">
         <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
@@ -36,10 +36,7 @@
             </ul>
         </div>
     </div>
-    <div class="coBody" id="coBody">
-       
-    </div>
-    
+  
 <script>
     var x=document.getElementById("nav");
         function closeNav(){
@@ -55,6 +52,6 @@
            document.getElementById("coBody").style.zIndex="-1";
         }
     </script>
-</body>
+<!-- </body>
 
-</html>
+</html> -->
