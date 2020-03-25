@@ -9,7 +9,7 @@
     
 </head>
 
-<body>
+<body >
     
     <div class="header">
         <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
@@ -33,17 +33,11 @@
                 <li><a class="menu" href="#">Support</a></li>
                 <li><a class="sign" href="#">Sign Up</a></li>
                 <li><a class="sign" href="#">Sign In</a></li>
-
-
             </ul>
         </div>
     </div>
-    <div class="coBody">
-        
-        <input type="email" name="" id="" class="text-F" placeholder="email">
-        <br>
-        <input type="password" name="" id="" class="text-F" placeholder="Password"><br>
-<input type="submit" class="btn">
+    <div class="coBody" id="coBody">
+       
     </div>
     
 <script>
@@ -51,10 +45,14 @@
         function closeNav(){
            x.style.width="0px";
            x.style.display="none"
+           x.style.zIndex="2";
+           document.getElementById("coBody").style.zIndex="0";
         }
         function OpenNav(){
             x.style.width="200px";
            x.style.display="inline"
+           x.style.zIndex="2";
+           document.getElementById("coBody").style.zIndex="-1";
         }
 </script>
 </body>

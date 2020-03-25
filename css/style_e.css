@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 *{
     font-family: 'Roboto' 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
 }
 body{
     /* background: radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #ff94fb, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%); */
@@ -13,6 +14,7 @@ body{
     padding: 0;
     /* text-align: center; */
 }
+
 .navbar{
     text-decoration: none;
     /* display: inline; */
@@ -27,6 +29,7 @@ body{
     background-color: rgba(0,0,0,15%);
     margin-top: 0px;
     position: fixed;
+   /* overflow: auto; */
 
     top: 0px;
     /* clear: both; */
@@ -111,8 +114,8 @@ body{
     height: 100vh;
     background-color: #333;
     width: 250px;
-    display: block;
-    position: absolute;
+    display: inline;
+    position: relative;
     top: 0;
     right: 0;
 }
@@ -175,8 +178,9 @@ box-shadow: black 2px;
     }
   .menu:hover,.sign:hover{
     color: white;
-    background-color: #222;  
+    background-color: #333;  
     border: none;
+    padding-right: 40px;
   }
     .header li a{
         display: block;

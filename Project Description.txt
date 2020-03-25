@@ -3,7 +3,7 @@ The project aims to implement a web application to facilitate buying and selling
 
 For a guest user
 
--Sign up/sign in/Sign out
+-(albrae)Sign up/sign in/Sign out
 *Sign Up*
 {
     First name and Last name
@@ -25,14 +25,14 @@ For a logged in user
     price: between x and y (x<=price<=y)
 }
 
--Express the interest in things to buy to get the seller contact information displayed  (login required)
+-(albrae)Express the interest in things to buy to get the seller contact information displayed  (login required)
 {
     every user have profile.
 }
 
 -Communicate with the seller by text messages (if the interest is already expressed by the potential buyer) (login required)
 
--Manage things to sell: See interests, Add (including description and images), Edit and Delete.  (login required)
+-(Thamer)Manage things to sell: See interests, Add (including description and images), Edit and Delete.  (login required)
 {
 -Add product
 <
