@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style_e.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
+        <div class="logo">
+            <a href="#"><img src="../img/logo.png" width="70px" height="80px" style="margin-top: 0px; margin-left: 0.5cm;" alt="logo"></a>
+        </div>
+        <div>
+
+            <img onclick="OpenNav()" width="30px" height="20px" id="open" src="../img/menu_icon.png" alt="">
+            <ul class="navbar" id="nav">
+                <span onclick="closeNav()" id="close">X</span>
+                <li><a class="menu" href="">Home</a></li>
+                <li><a class="menu" href="#">Electronics</a></li>
+                <li><a class="menu" href="#">Cars</a></li>
+                <li><a class="menu" href="#">Clothing</a></li>
+                <li><a class="menu" href="#">Furniture</a></li>
+                <li><a class="menu" href="#">Games</a></li>
+                <li><a class="menu" href="#">Movies</a></li>
+                <li><a class="menu" href="#">Books</a></li>
+                <li><a class="menu" href="#">About</a></li>
+                <li><a class="menu" href="#">Support</a></li>
+                <li><a class="sign" href="#">Sign Up</a></li>
+                <li><a class="sign" href="#">Sign In</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="coBody" style="margin: auto; width: 30%; margin-top: 1cm; background-color: rgba(255, 255, 255, 0.9);">
+        <h2 style="margin-top: 0cm;">Add a Product</h2>
+        <br>
+
+        <label>Category:</label>
+        <select id="category" onchange="checkSelection()" style="font-size: 17px;">
+            <option selected>Electronics</option>
+            <option>Cars</option>
+            <option>Clothing</option>
+            <option>Furniture</option>
+            <option>Games</option>
+            <option>Movies</option>
+            <option>Books</option>
+        </select>
+        <br>
+        <label id="test"></label>
+        <br>
+
+        <script>
+            function checkSelection() {
+                var sel = document.getElementById("category").selectedIndex;
+                // This is for testing and will be deleted later
+                document.getElementById("test").innerHTML = "You've selected " + sel;
+            }
+        </script>
+
+        <form id="Product" style="width: 11cm; margin: auto;">
+            <div style="float: left;">
+                <label for="name" style="display: block;">Name:</label>
+                <input id="name" type="text" class="text-D" block; style="width: 6.85cm;">
+            </div>
+
+            <div style="float: right;">
+                <label for="price" style="display: block; left: 10px; position: relative;">Price:</label> $
+                <input id="price" type="number" min="0.01" step="any" class="text-D" style="width: 3cm; margin-left: 0px;">
+                <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
+            </div>
+            <br>
+
+            <label style="display: block;" for="description">Description:</label>
+            <textarea id="description" cols="59" rows="5" style="float: left; margin-bottom: .5cm;"></textarea>
+            <br>
+            <label for="images">Images:</label>
+            <input id="images" type="file" multiple><br>
+            <input type="submit" class="btn">
+            <!-- Add category-specific inputs such as ODR, assign required and optional information -->
+        </form>
+    </div>
+    <script>
+        var x = document.getElementById("nav");
+
+        function closeNav() {
+            x.style.width = "0px";
+            x.style.display = "none"
+        }
+
+        function OpenNav() {
+            x.style.width = "200px";
+            x.style.display = "inline"
+        }
+    </script>
+</body>
+
+</html>
