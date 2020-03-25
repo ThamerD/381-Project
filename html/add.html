@@ -7,8 +7,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="../css/style_e.css">
 
-    </style>
-
 </head>
 
 <body>
@@ -40,7 +38,10 @@
             </ul>
         </div>
     </div>
-    <div class="coBody">
+    <div class="coBody" style="margin: auto; width: 30%; margin-top: 1cm; background-color: rgba(255, 255, 255, 0.9);">
+        <h2 style="margin-top: 0cm;">Add a Product</h2>
+        <br>
+
         <label>Category:</label>
         <select id="category" onchange="checkSelection()" style="font-size: 17px;">
             <option selected>Electronics</option>
@@ -66,12 +67,12 @@
         <form id="Product" style="width: 11cm; margin: auto;">
             <div style="float: left;">
                 <label for="name" style="display: block;">Name:</label>
-                <input id="name" type="text" class="text-D" block; style="width: 7cm;">
+                <input id="name" type="text" class="text-D" block; style="width: 6.85cm;">
             </div>
 
             <div style="float: right;">
                 <label for="price" style="display: block; left: 10px; position: relative;">Price:</label> $
-                <input id="price" type="number" min="0.01" step="any" class="text-D" style="width: 3cm; margin-left: 2px;">
+                <input id="price" type="number" min="0.01" step="any" class="text-D" style="width: 3cm; margin-left: 0px;">
                 <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
             </div>
             <br>
