@@ -1,18 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../css/style_e.css">
-
-</head> -->
-
-<!-- <body> -->
 
     <div class="header">
-        <!-- <h1 style="width: 33%;">Xyzxyz</h1> -->
+      
         <div class="logo">
             <a href="#"><img src="../img/logo.png" width="70px" height="80px" style="margin-top: 0px; margin-left: 0.5cm;" alt="logo"></a>
         </div>
@@ -52,6 +40,3 @@
            document.getElementById("coBody").style.zIndex="-1";
         }
     </script>
-<!-- </body>
-
-</html> -->
