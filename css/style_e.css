@@ -116,11 +116,10 @@ label {
     border-radius: 6px;
     width: 80%;
     overflow: auto;
-    
+    max-height: 70vh; /*(New) By Aalzughibi*/
     position: relative;
     top: 80px;
     font-size: 17px;
-    /* z-index: -1; */
 }
 
 .sideBar {
@@ -289,8 +288,8 @@ label {
 /* albra end */
 
 /* AAlzughibi Start */
+/* Start liveChat.php */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
-
 .container {
     width: 400px;
     padding: 10px;
@@ -448,4 +447,46 @@ label {
     top: 15px;
     left: 5%;
 }
+/* End liveChat.php */
+/* //////////////////// */
+/* Start inbox.php */
+.opactiy-Cobody{
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    
+}
+.message-smallSize{
+    /* position: relative; */
+    /* bottom: 50%; */
+    /* left: 6.5%; */
+    padding-left: 6%;
+    padding-top: 0px ;
+    margin: 0;
+    bottom: 3vh;
+    float: left;
+    clear: both;
+    font-size: 10pt;
+}
+.card-inbox{
+    padding-top: 10px;
+    background: rgba(97, 96, 96, 0.1);
+    /* clear: both; */
+    height: 100px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    /* width: 350px; */
+  
+
+}
+.card-inbox:hover{
+    background: rgba(194, 192, 192, 0.1);
+}
+.padding-inbox{
+    padding-top:15px;
+}
+.Container-inbox{
+}
+
+/* End inbox.php */
+
 /* AAlzughibi End */
