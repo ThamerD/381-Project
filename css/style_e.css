@@ -295,23 +295,28 @@ label {
     width: 400px;
     padding: 10px;
     position: relative;
-    top: 20%;
-    left: 35%;
+    top: 12%;
+    left: 0%;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 70vh;
     background-color: rgba(245, 245, 245, 0.788);
     border-radius: 1%;
-    width: 30%;
+    width: 75%;
+    /* float: left; */
 }
 .text-for-message{
     position: relative;
-    bottom: -250px;
-    left: 35%;
-    width: 25%;
+    top: 12vh;
+    /* bottom: 70vh; */
+    left: 8%;
+    /* right: 0%; */
+    width: 60%;
     border-radius: 1%;
+    /* display: block; */
 }
 .btn-width{
-    width: 4.5%;
+    width: 10%;
 }
 .message-blue {
     position: relative;
@@ -345,7 +350,7 @@ label {
     padding: 1;
     margin: 0px;
     /* background-color: #1ce799; */
-    width: 200px;
+    width: auto;
 }
 
 .message-timestamp-right {
@@ -411,5 +416,36 @@ label {
     bottom: -1px;
     right: -17px;
 }
-
+.chat-profile{
+    margin-left: 3%;
+    padding-left: 3%; 
+    width: 25%;
+    /* background: red; */
+    /* height: 27%; */
+    /* float: right; */
+    position: relative;
+    /* bottom: 52vh; */
+    top: 9vh;
+    left: 3.5%;
+    /* margin: 0; */
+    /* clear: both; */
+    /* overflow: hidden; */
+    /* background-color: rgba(245, 245, 245, 0.1); */
+}
+.profile-img{
+    float: left;
+    padding-left: 1.5%;
+    border-radius: 50%;
+}
+.profile-name{
+    /* float: right; */
+    padding-top: 2%;
+    padding-left: 1.5%;
+    color: white;
+    font-weight: bold;
+    /* width: 20px; */
+    position: relative;
+    top: 15px;
+    left: 5%;
+}
 /* AAlzughibi End */

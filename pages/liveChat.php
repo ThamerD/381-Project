@@ -8,6 +8,13 @@
 </head>
 <body>
 <?php include_once "base.php"; ?>
+<div class = "chat-profile">
+ 
+    <div class = "profile-card">
+        <img src="https://profiles.utdallas.edu/img/default.png" width="50px" height = "50px" class = "profile-img" alt="">
+        <p class="profile-name"><a style="text-decoration:none; color:white;" href="#">Abdullah Ali</a></p>
+    </div>
+</div>
 <div class="container" id="Container">
     <div class="message-blue">
         <p class="message-content">This is an awesome message!</p>
@@ -34,6 +41,9 @@
 </div>
 <input  type="text" name="" class="text-F text-for-message" id="Message">
 <input type="submit" value="Send" class="btn text-for-message btn-width" id="SendMessage" onclick="SendMessage()">
+
+</div>
+
 <script>
     function SendMessage(){
     var cont = document.getElementById("Container");
@@ -52,6 +62,5 @@
     cont.appendChild(div1);
     }
 </script>
-</div>
 </body>
 </html>
