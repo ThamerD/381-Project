@@ -436,3 +436,18 @@ label {
     left: 5%;
 }
 /* AAlzughibi End */
+
+/* Thamer Start */
+
+.field{
+    width: 6.8cm;
+    height: .5cm;
+    margin: 0cm 0cm .5cm;
+}
+
+label{
+    display: block;
+}
+
+
+/* Thamer End */
