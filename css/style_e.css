@@ -175,19 +175,6 @@ label {
     font-size: 15px;
 }
 
-.text-D {
-    /* background-color: rgba(256, 256, 256,); */
-    margin-bottom: .5cm;
-    border: 1px solid #222;
-    border-radius: 2px;
-    color: black;
-    width: 5cm;
-    padding: 3px;
-    box-shadow: black 2px;
-    height: 0.5cm;
-    font-size: 15px;
-}
-
 @media only screen and (max-width:1199px) {
     .navbar {
         float: left;

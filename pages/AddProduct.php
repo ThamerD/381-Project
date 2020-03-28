@@ -16,7 +16,7 @@
         <h2 style="margin-top: 0cm;">Add a Product</h2>
         <br>
 
-        <label>Category:</label>
+        <label style="display: inline;">Category:</label>
         <select id="category" onchange="checkSelection()" style="font-size: 17px;">
             <option selected>Electronics</option>
             <option>Cars</option>
@@ -27,57 +27,73 @@
             <option>Books</option>
         </select>
         <br>
-        <label id="test"></label>
+        <!-- <label id="test"></label> -->
         <br>
 
         <script>
             function checkSelection() {
                 var sel = document.getElementById("category").selectedIndex;
                 // This is for testing and will be deleted later
-                document.getElementById("test").innerHTML = "You've selected " + sel;
+                // document.getElementById("test").innerHTML = "You've selected " + sel;
                 var wrap=document.getElementById("wrapper");
-                var carInfo ='<br><label for="brand">Brand:</label><input id="brand" type="text" class="text-D">' +
-                <br><label for="odo">Odo:</label><input id="odo" type="text" class="text-D">';
-                var cloInfo ='<br><label for="size">Size:</label><input id="size" type="text" class="text-D">';
+                var wrapR=document.getElementById("wrapperR");
+                var carInfo ='<label for="brand">Brand:</label><input id="brand" type="text" class="field">\
+                <label for="model">Model Year:</label><input id="model" type="number" class="field">';
+                var carInfoR ='<label for="odo">Odo:</label><input id="odo" type="text" class="field"><br>\
+                <label for="condition">Condition:</label><select style="font-size: 15px; width: 6.9cm; margin-bottom:.5cm"><option>New</option><option>Used</option></select>';
+                var cloInfo ='<label for="size" >Size:</label><input id="size" type="text" class="field">';
+                var cloInfoR ='<label for="brand">Brand:</label><input id="brand" type="text" class="field">';
+
                 switch(sel){
                     case 0:
-                     wrap.innerHTML="";
-                     break;
+                        wrap.innerHTML="";
+                        wrapR.innerHTML=""
+                        break;
                     case 1:
-                    wrap.innerHTML=carInfo; 
-                    break;
-                    case 2: wrap.innerHTML=cloInfo; break;
+                        wrap.innerHTML=carInfo; 
+                        wrapR.innerHTML=carInfoR;
+                        break;
+                    case 2:
+                        wrapR.innerHTML=cloInfo;
+                        wrap.innerHTML=cloInfoR;
+                        break;
                     case 3:
+                    break;
                     case 4:
+                    break;
                 }
             }
         </script>
 
-        <form id="Product" style="width: 11cm; margin: auto;">
+        <form id="Product" style="width: 15cm; margin: auto;">
             <div style="float: left;">
-                <label for="name" style="display: block;">Name:</label>
-                <input id="name" type="text" class="text-D" style="width: 6.85cm;">
+                <label for="name">Name:</label>
+                <input id="name" type="text" class="field">
             </div>
 
             <div style="float: right;">
-                <label for="price" style="display: block; left: 10px; position: relative;">Price:</label> $
-                <input id="price" type="number" min="0.01" step="any" class="text-D" style="width: 3cm; margin-left: 0px;">
-                <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
+                <label for="price">Price:</label>$
+                <input class="field" id="price" type="number" min="0.01" step="any">
             </div>
-            <br>
+                <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
 
-            <label style="display: block;" for="description">Description:</label>
-            <textarea id="description" cols="59" rows="5" style="float: left; margin-bottom: .5cm;"></textarea>
-            <br>
-            <label for="images">Images:</label>
-            <input id="images" type="file" multiple><br>
+            <div id="wrapper" style="float: left;"></div>
+            <div id="wrapperR" style="float: right;"></div>
+            <!-- <br> -->
 
-            <div id="wrapper"></div>
+            <div style="float: left;">
+            <label for="description">Description:</label>
+            <textarea style="display: block;" id="description" cols="78" rows="5"></textarea>
+            </div>
+        <div >
+            <label style="display: inline;" for="images">Images:</label>
+            <input style="margin:1cm 0cm 1cm" id="images" type="file" multiple>
+        </div>
+
 
             <!-- <label for="brand">Brand:</label>
-            <input id="brand" type="text" class="text-D"> -->
-
-            <input type="submit" class="btn">
+            <input id="brand" type="text" class="field"> -->
+            <input type="submit" class="btn" style="margin-left: 0cm;">
             <!-- Add category-specific inputs such as ODR, assign required and optional information -->
         </form>
     </div>
