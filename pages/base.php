@@ -10,13 +10,13 @@
             <ul class="navbar" id="nav">
                 <span onclick="closeNav()" id="close">X</span>
                 <li><a class="menu" href="Home.html">Home</a></li>
-                <li><a class="menu" href="#">Electronics</a></li>
+                <li><a class="menu" href="#">Books</a></li>
                 <li><a class="menu" href="#">Cars</a></li>
                 <li><a class="menu" href="#">Clothing</a></li>
-                <li><a class="menu" href="#">Furniture</a></li>
+                <li><a class="menu" href="#">Electronics</a></li>
+                <!-- <li><a class="menu" href="#">Furniture</a></li> -->
                 <li><a class="menu" href="#">Games</a></li>
                 <li><a class="menu" href="#">Movies</a></li>
-                <li><a class="menu" href="#">Books</a></li>
                 <li><a class="menu" href="#">About</a></li>
                 <li><a class="menu" href="#">Support</a></li>
                 <li><a class="sign" href="#">Sign Up</a></li>

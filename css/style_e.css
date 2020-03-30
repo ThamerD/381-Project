@@ -483,13 +483,38 @@ label {
 
 .field{
     width: 6.8cm;
-    height: .5cm;
+    height: .6cm;
     margin: 0cm 0cm .5cm;
+    font-size: 18px;
 }
 
 label{
     display: block;
+    font-size: 22px;
+
 }
 
+.km {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+  }
+  
+  .km::after {
+    position: absolute;
+    top: 2px;
+    right: .5em;
+    transition: all .05s ease-in-out;
+    content: 'km';
+  }
+  
+  .km:hover::after,
+  .km:focus-within::after {
+    right: 1.5em;
+  }
+  .redBorder{
+      border-color: red;
+      border-style: solid;
+  }
 
 /* Thamer End */
