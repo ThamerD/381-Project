@@ -12,26 +12,38 @@
     <?php include_once "base.php"; ?>
     <div class="divlogin">
         <div style="margin-top:15%;">
-
             <h2>LOGIN </h2>
 
             <form>
-                <input class="text-F" type="email" id="tex" name="userNameLogIn" placeholder="&#9993; Email"><br>
-
-
-
-                <input class="text-F" type="password" name="passLogIn" placeholder="&#128477;password"><br>
+                <input class="text-F" type="email" id="tex" name="userNameLogIn" placeholder="&#9993; Email" required><br>
+                <input  class="text-F" type="password" name="passLogIn" placeholder="&#128477;password" required><br>
                 <a href="#" class="linklog" style="   font-size: 12px;margin-right: 22%;">forget password?</a><br>
-
-                <input type="submit" class="btn" value="Log In">
-
+                <input type="submit" class="btn" value="Log In"  onclick="fan()">
             </form>
-
-            <p>don't have an account?<a href="sign up.html" class="linklog">sign Up</a></p>
-
+            <p>don't have an account?<a href="sign up.html" class="linklog" >sign Up</a></p>
         </div>
-
     </div>
+
+    
+
+    <script>
+    fan(){
+
+        if(document.getElementbyId('tex').value ==""){
+        alert("mfmfmfm");
+        return false;
+        }
+
+
+
+    }
+    
+    
+    
+    
+    </script>
+
+
 
 
     <i class="fas fa-eye"></i>
