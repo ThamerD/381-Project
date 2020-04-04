@@ -174,72 +174,7 @@ label {
     font-size: 15px;
 }
 
-@media only screen and (max-width:1199px) {
-    .navbar {
-        float: left;
-        height: 100vh;
-        background: #333;
-        /* background-color: #ff94fb; */
-        color: aliceblue;
-        z-index: 1023;
-        margin: 0;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: 0px;
-        list-style-type: none;
-        padding-left: 0px;
-        padding-top: 50px;
-        display: none;
-        padding-right: 0px;
-    }
-    .menu,
-    .sign {
-        float: none;
-        border: none;
-        border-radius: 0px;
-        background-color: #333;
-        color: white;
-    }
-  .menu:hover,.sign:hover{
-    color: white;
-    background-color: #333;  
-    border: none;
-    padding-right: 40px;
-  }
-    .header li a{
-        display: block;
-        padding-right: 0px;
-        padding-left: 0px;
-        /* opacity: 100%; */
-    }
-    .header ul li {
-        width: 100%;
-    }
-    .header ul {
-        /* background-color:aqua ; */
-        padding: 0px;
-        /* text-align: center; */
-        padding-top: 50px;
-        /* width: 100%; */
-        /* margin: 0; */
-    }
-    #close {
-        display: inline;
-        position: relative;
-        top: -25px;
-        left: 15px;
-        cursor: pointer;
-        color: white;
-    }
-    #open {
-        display: inline;
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        cursor: pointer;
-    }
-}
+
 
 /* albra start */
 .divlogin {
@@ -311,11 +246,13 @@ label {
     padding: 10px;
     background-color: #A8DDFD;
     width: 200px;
-    height: 50px;
+    height: auto;
+    min-height: 50px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #97C6E3;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .message-orange {
@@ -326,10 +263,12 @@ label {
     background-color: #f8e896;
     width: 200px;
     height: auto;
+    min-height: 50px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #dfd087;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .message-content {
@@ -337,6 +276,7 @@ label {
     margin: 0px;
     /* background-color: #1ce799; */
     width: auto;
+
 }
 
 .message-timestamp-right {
@@ -476,6 +416,105 @@ label {
 }
 
 /* End inbox.php */
+/* ///////////////// */
+/* Start Home.php */
+.search__container {
+    padding-top: 64px;
+}
+
+.search__title {
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    color: #ffffff;
+}
+
+.search__input {
+    width: 70%;
+    padding: 12px 24px;
+
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    
+    /* color: #575756; */
+    color: #ffffff;
+    background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    /* border: 1px solid #575756; */
+    border: 1px solid #ffffff;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.search__input::placeholder {
+        /* color: rgba(87, 87, 86, 0.8); */
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+.search__input:hover,
+    .search__input:focus {
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        /* border-bottom: 1px solid #575756; */
+        border-bottom: 1px solid #ffffff;
+        border-radius: 0;
+        background-position: 100% center;
+    }
+#myBtn-Home{
+    display: none;
+}
+.coBody-HeightValue{
+    overflow: none;
+    height: auto;
+    /* top: -0.5vh; */
+}
+.newestProduct{
+    /* background: red; */
+    width: 9%;
+    text-align: left;
+   padding: 1%;
+    border-radius: 6px;
+    float: left;
+    margin: 10px;
+    word-wrap: break-word;
+}
+.newestProduct:nth-child(odd){
+    background: rgba(97, 96, 96, 0.1);
+}
+.newestProduct:nth-child(odd):hover{
+    background: rgba(194, 192, 192, 0.1);
+}
+.newestProduct:nth-child(even){
+    background: rgba(194, 192, 192, 0.1);
+    
+}
+.newestProduct:nth-child(even):hover{
+    background: rgba(97, 96, 96, 0.1);
+    
+}
+  #error-Search{
+      margin-left: 44%;
+      padding: 6px;
+      width: 150px;
+      border-left: 2px solid red;
+      background: rgba(253, 2, 2, 0.5);
+      color: white;
+      display: none;
+      font-family: "roboto";
+  }
+/* End Home.php */
 
 /* AAlzughibi End */
 
@@ -518,3 +557,76 @@ label{
   }
 
 /* Thamer End */
+@media only screen and (max-width:1199px) {
+    .navbar {
+        float: left;
+        height: 100vh;
+        background: #333;
+        /* background-color: #ff94fb; */
+        color: aliceblue;
+        z-index: 1023;
+        margin: 0;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        list-style-type: none;
+        padding-left: 0px;
+        padding-top: 50px;
+        display: none;
+        padding-right: 0px;
+    }
+    .menu,
+    .sign {
+        float: none;
+        border: none;
+        border-radius: 0px;
+        background-color: #333;
+        color: white;
+    }
+  .menu:hover,.sign:hover{
+    color: white;
+    background-color: #333;  
+    border: none;
+    padding-right: 40px;
+  }
+    .header li a{
+        display: block;
+        padding-right: 0px;
+        padding-left: 0px;
+        /* opacity: 100%; */
+    }
+    .header ul li {
+        width: 100%;
+    }
+    .header ul {
+        /* background-color:aqua ; */
+        padding: 0px;
+        /* text-align: center; */
+        padding-top: 50px;
+        /* width: 100%; */
+        /* margin: 0; */
+    }
+    #close {
+        display: inline;
+        position: relative;
+        top: -25px;
+        left: 15px;
+        cursor: pointer;
+        color: white;
+    }
+    #open {
+        display: inline;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+    /* By Aalzughibi */
+    .newestProduct{
+        float: none;
+        background: gray;
+        width: 90%;
+        margin: 10px;
+    }
+}
