@@ -8,17 +8,52 @@
     <link rel="stylesheet" href="../css/style_e.css">
     <script src="../js/Script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        .coBody{
+            width: 550px;
+        }
+        @media only screen and (max-width:1199px) {
+            .coBody{
+            width: 90%;
+            max-width: 400px;
+
+        }
+
+            form{
+                left: 50px;
+                position: relative;    
+                margin: auto;
+            }
+            label, .catSelect{
+                font-size: 18px;
+            }
+        .field, .wideSelect, label{
+            width: 7.8cm;
+
+        }
+        .btn{
+            float: left;
+        }
+        .im{
+            float: right;
+        }
+
+
+        }
+    </style>
 </head>
 
 <body>
 
 <?php include_once "base.php"; ?>
-    <div class="coBody" id="coBody" style="margin: auto; width: 30%; margin-top: 1cm; background-color: rgba(255, 255, 255, 0.9);">
+    <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
+
         <h2 style="margin-top: 0cm;">Add a Product</h2>
         <br>
 
         <label style="display: inline;">Category:</label>
-        <select id="category" onchange="checkSelection()" style="font-size: 23px;">
+        <select id="category" class="catSelect" onchange="checkSelection()">
             <option>Books</option>
             <option>Cars</option>
             <option>Clothing</option>
@@ -40,13 +75,13 @@
 
         </script>
 
-        <form id="Product" style="width: 15cm; margin: auto;" method="post" action="#">
-            <div style="float: left;">
+        <form id="Product" method="post" action="#">
+            <div class="left">
                 <label for="name">Name:</label>
                 <input name="name" id="name" type="text" class="field" onblur="nameEmpty()">
             </div>
 
-            <div style="float: right;">
+            <div class="right">
                 <!-- <label for="price">Price:</label>
                 <input name="price" class="field" id="currency-field" type="number" min="0.01" step="any" onblur="priceEmpty()"> -->
                 <label for="currency-field">Price:</label>
@@ -55,23 +90,23 @@
             </div>
 <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
 
-            <div id="wrapper" style="float: left;"></div>
-            <div id="wrapperR" style="float: right;"></div>
+            <div id="wrapper" class="left"></div>
+            <div id="wrapperR" class="right"></div>
             <!-- <br> -->
 
-            <div style="float: left;">
+            <div class="left">
             <label for="description">Description:</label>
-            <textarea style="display: block;" id="description" cols="78" rows="5"></textarea>
+            <textarea style=" margin:0cm 0cm 1cm; display: block;" id="description" cols="78" rows="5"></textarea>
             </div>
-        <div >
-            <label style="display: inline;" for="images">Images:</label>
-            <input style="margin:1cm 0cm 1cm" id="images" type="file" multiple>
+        <div class="im">
+            <label style="display: inline" for="images">Images:</label>
+            <input style="margin:0cm 0cm 0.7cm" id="images" type="file" multiple>
         </div>
 
 
             <!-- <label for="brand">Brand:</label>
             <input id="brand" type="text" class="field"> -->
-            <input type="submit" class="btn" style="margin-left: 0cm;">
+            <input type="submit" class="btn" style="margin: auto;">
             <!-- Add category-specific inputs such as ODR, assign required and optional information -->
         </form>
     </div>
