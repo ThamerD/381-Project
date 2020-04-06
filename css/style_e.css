@@ -535,6 +535,16 @@ label{
 
 }
 
+.wideSelect{
+    font-size: 21px;
+    width: 6.9cm;
+    margin:0cm 0cm .5cm;
+    background-color: white;
+}
+.catSelect{
+   font-size: 23px
+}
+
 .km {
     display: inline-block;
     position: relative;
@@ -557,7 +567,16 @@ label{
       border-color: red;
       border-style: solid;
   }
-
+  .right{
+    float: right;
+}
+  .left{
+    float: left;
+}
+form{
+    width: 15cm;
+    margin: auto;
+}
 /* Thamer End */
 @media only screen and (max-width:1199px) {
     .navbar {
@@ -631,4 +650,43 @@ label{
         width: 90%;
         margin: 10px;
     }
+/* Thamer start */
+    .right{
+        clear: both;
+        float: right;
+
+    }
+      .left{
+        clear: both;
+        float: right;
+
+
+    }
+    form{
+        width: 5cm;
+    }
+    textarea{
+        width: 7.8cm;
+
+    }
+    form{
+        left: 50px;
+        position: relative;    
+        margin: auto;
+    }
+    label, .catSelect{
+        font-size: 18px;
+    }
+    .field, .wideSelect, label{
+        width: 7.8cm;
+
+    }
+    .btn{
+        float: left;
+    }
+    .im{
+        float: right;
+    }
+/* Thamer end */
+
 }
