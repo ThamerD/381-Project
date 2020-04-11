@@ -581,6 +581,18 @@ form{
     width: 15cm;
     margin: auto;
 }
+.imgDiv{
+    float: left;
+    width: 50%;
+    color: tomato;
+
+}
+.prodInfo{
+    float: left;
+    /* text-align: left; */
+    width: 50%;
+    color: teal;
+}
 /* Thamer End */
 @media only screen and (max-width:1199px) {
     .navbar {
