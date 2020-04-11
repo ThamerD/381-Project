@@ -516,8 +516,12 @@ label {
       display: none;
       font-family: "roboto";
   }
+  
 /* End Home.php */
-
+.btn2{
+    position: relative;
+    bottom: -300px;
+}
 /* AAlzughibi End */
 
 /* Thamer Start */

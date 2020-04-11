@@ -11,6 +11,9 @@
 </head>
 <body>
     <?php include_once "base.php"; ?>
+    <?php
+        $con=mysqli_connect("lcoalhost","root","")
+    ?>
     <div class="coBody" id="coBody" style="background:none;">
         <div class="search__container">
             <p class="search__title">
