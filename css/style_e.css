@@ -589,6 +589,20 @@ form{
     margin: auto;
     padding: 10px;
 }
+.authInfo{
+    text-align: left;
+    /* float: left; */
+    background-color: rgba(233, 229, 171, 0.329);
+    padding: 10px;
+    font-size: 16px;
+    margin: 0px;
+    color: gray
+}
+.author{
+    text-decoration: none;
+    color:rgb(36, 127, 211);
+}
+
 
 
   
@@ -599,6 +613,7 @@ form{
     float: left;
     width: 50%;
     overflow: hidden;
+    padding: 0px 50px 0px;
 
   }
   
@@ -617,11 +632,12 @@ form{
   .next {
     cursor: pointer;
     position: absolute;
-    top: 20%;
+    top: 40%;
     width: auto;
     padding: 16px;
     margin-top: -50px;
     color: white;
+    background-color: rgb(182, 182, 182);
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -631,11 +647,11 @@ form{
   
   /* Position the "next button" to the right */
   .next {
-    right: 10px;
+      right: 0px;
     border-radius: 3px 0 0 3px;
   }
   .prev {
-    left: 10px;
+    left: 0px;
     border-radius: 3px 0 0 3px;
   }
   
@@ -671,7 +687,10 @@ form{
   /* Six columns side by side */
   .column {
     float: left;
-    width: 16.66%;
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: solid rgba(0, 0, 0, 25%) 1px;
   }
   
   /* Add a transparency effect for thumnbail images */
