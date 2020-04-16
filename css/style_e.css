@@ -522,6 +522,20 @@ label {
     position: relative;
     bottom: -300px;
 }
+.RightWidth{
+    float:right;width:45%;
+}
+.LeftWidth{
+    float:left;width:45%;
+    
+}
+.leftRadio{
+    float: none;
+}
+#idid{
+    
+    height: 30px;
+}
 /* AAlzughibi End */
 
 /* Thamer Start */
@@ -594,7 +608,13 @@ form{
     color: teal;
 }
 /* Thamer End */
+@media only screen and (max-width:399px){
+    .RightWidth, .LeftWidth{
+        float:none;width:70%;
+    }
+}
 @media only screen and (max-width:1199px) {
+    
     .navbar {
         float: left;
         height: 100vh;
