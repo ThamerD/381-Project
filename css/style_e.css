@@ -595,18 +595,127 @@ form{
     width: 15cm;
     margin: auto;
 }
-.imgDiv{
-    float: left;
-    width: 50%;
-    color: tomato;
 
-}
 .prodInfo{
     float: left;
-    /* text-align: left; */
+    text-align: left;
     width: 50%;
-    color: teal;
+    margin: auto;
+    padding: 10px;
 }
+.authInfo{
+    text-align: left;
+    /* float: left; */
+    background-color: rgba(233, 229, 171, 0.329);
+    padding: 10px;
+    font-size: 16px;
+    margin: 0px;
+    color: gray
+}
+.author{
+    text-decoration: none;
+    color:rgb(36, 127, 211);
+}
+
+
+
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    /* top: 50px; */
+    position: relative;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    padding: 0px 50px 0px;
+
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    background-color: rgb(182, 182, 182);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+      right: 0px;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 10px;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: solid rgba(0, 0, 0, 25%) 1px;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
 /* Thamer End */
 @media only screen and (max-width:399px){
     .RightWidth, .LeftWidth{

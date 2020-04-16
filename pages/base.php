@@ -19,8 +19,8 @@
                 <li><a class="menu" href="#">Movies</a></li>
                 <li><a class="menu" href="#">About</a></li>
                 <li><a class="menu" href="#">Support</a></li>
-                <li><a class="sign" href="#">Sign Up</a></li>
-                <li><a class="sign" href="#">Sign In</a></li>
+                <li><a class="sign" href="../pages/sign_up.php">Sign Up</a></li>
+                <li><a class="sign" href="../pages/sign_in.php">Sign In</a></li>
             </ul>
         </div>
     </div>
