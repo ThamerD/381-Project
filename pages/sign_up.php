@@ -58,8 +58,8 @@ if($nameErr!=""){
         <div  style=""> <?php  echo $nameErr; ?> </div>
         <!-- <div id="signat" style="background-color:black;padding-top:0%;" ></div> -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"  >
-            first name<span id="sun" style="color: chocolate;">*</span> <br><input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:80%;"><br>
-           last name<span id="sun" style="color: chocolate;">*</span> <br><input style="width:80%;" type="text" id="lname" placeholder="last name" class="text-F" > <br> phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="12" type="text" id="phon"  value="+966" class="text-F" id="number" style="width: 80%;" ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="your@gmail.com" class="text-F" style="width: 80%;" ><br> password
+          <p>first name<span id="sun" style="color: chocolate;">*</span></p> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:80%;margin-top:0%;"><br>
+          phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="12" type="text" id="phon"  value="+966" class="text-F" id="number" style="width: 80%;" ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="your@gmail.com" class="text-F" style="width: 80%;" ><br> password
             <span style="color: chocolate;">*</span> <input type="password" id="pass" placeholder="password" class="text-F" style="width: 80%;" ><br> confirm password<span style="color: chocolate;">*</span><input type="password" id="cpass" placeholder="re-entir password"
                 class="text-F" style="width: 80%;" >
             <div style="text-align: center;">
