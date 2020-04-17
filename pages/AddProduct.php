@@ -12,11 +12,18 @@
     <style>
         .coBody{
             width: 550px;
+
         }
-        @media only screen and (max-width:1199px) {
+        label{
+            display: block;
+            font-size: 22px;
+
+        }
+        @media only screen and (max-width:700px) {
             .coBody{
             width: 90%;
             max-width: 400px;
+            /* background-color: pink; */
 
         }
 
@@ -38,6 +45,44 @@
         .im{
             float: right;
         }
+        label{
+        font-size: 18px;
+        width: 7.8cm;
+    }
+    .right{
+        clear: both;
+        float: right;
+
+    }
+      .left{
+        clear: both;
+        float: right;
+
+
+    }
+    .formP{
+        width: 5cm;
+        left: 50px;
+        position: relative;    
+        margin: auto;
+    }
+    textarea{
+        width: 7.8cm;
+
+    }
+    .catSelect{
+        font-size: 18px;
+    }
+    .field, .wideSelect{
+        width: 7.8cm;
+
+    }
+    .btn{
+        float: left;
+    }
+    .im{
+        float: right;
+    }
 
 
         }

@@ -11,9 +11,7 @@
 </head>
 <body>
     <?php include_once "base.php"; ?>
-    <?php
-        $con=mysqli_connect("lcoalhost","root","")
-    ?>
+  
     <div class="coBody" id="coBody" style="background:none;">
         <div class="search__container">
             <p class="search__title">
@@ -24,6 +22,16 @@
     </div>
     </div>
     <input type="button" id="myBtn-Home" value="" >
+    <?php
+// Create connection
+$con=mysqli_connect("localhost","root","","381_db"); 
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "<h1>Failed to connect to MySQL: " . mysqli_connect_error()."</h1>";
+  }
+?> 
     <div class="coBody coBody-HeightValue">
         <div class = "newestProduct">
             <p>subject: MW3</p>
