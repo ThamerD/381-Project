@@ -75,7 +75,7 @@
 
         </script>
 
-        <form id="Product" method="post" action="#">
+        <form class="formP" id="Product" method="post" action="#">
             <div class="left">
                 <label for="name">Name:</label>
                 <input name="name" id="name" type="text" class="field" onblur="nameEmpty()">
