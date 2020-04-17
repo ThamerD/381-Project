@@ -775,41 +775,5 @@ label {
         width: 90%;
         margin: 10px;
     }
-/* Thamer start */
-    .right{
-        clear: both;
-        float: right;
-
-    }
-      .left{
-        clear: both;
-        float: right;
-
-
-    }
-    .formP{
-        width: 5cm;
-        left: 50px;
-        position: relative;    
-        margin: auto;
-    }
-    textarea{
-        width: 7.8cm;
-
-    }
-    .catSelect{
-        font-size: 18px;
-    }
-    .field, .wideSelect{
-        width: 7.8cm;
-
-    }
-    .btn{
-        float: left;
-    }
-    .im{
-        float: right;
-    }
-/* Thamer end */
 
 }
