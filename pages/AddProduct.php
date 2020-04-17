@@ -12,6 +12,12 @@
     <style>
         .coBody{
             width: 550px;
+
+        }
+        label{
+            display: block;
+            font-size: 22px;
+
         }
         @media only screen and (max-width:1199px) {
             .coBody{
@@ -38,6 +44,10 @@
         .im{
             float: right;
         }
+        label{
+        font-size: 18px;
+        width: 7.8cm;
+    }
 
 
         }

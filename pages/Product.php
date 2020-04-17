@@ -12,16 +12,36 @@
 
     <style>
         .coBody{
-            width: 1400px;
+            /* width: 1400px; */
             padding: 10px;
+            height:100%;
 
         }
-        @media only screen and (max-width:1199px) {
+          /* Position the image container (needed to position the left and right arrows) */
+          .container {
+            top: 0px;
+            position: relative;
+            float: left;
+            width: 50%;
+            overflow: hidden;
+            padding: 0px 50px 0px;
+            background-color: white;
+
+          }
+        @media only screen and (max-width:1400px) {
             .coBody{
             width: 90%;
-            max-width: 400px;
+            /* max-width: 400px; */
 
         }
+        .container {
+        float: none;
+        width: 100%;    
+      }
+      .prodInfo{
+        float: none;
+        width: 100%;
+    }
     }
     * {
     box-sizing: border-box;
@@ -41,14 +61,18 @@
 ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
 <!-- IMAGES HERE -->
 <p class="authInfo" id="athr">
-  <strong>Author: </strong><a class="author" href="../pages/profile.php">Abu Raghad Alraghadeen 511 </a> 
+  <strong>Author: </strong><a class="author" href="../pages/profile.php">Abu Raghad 511 </a> 
   <span style="float:right;">
     <i class="fa">&#xf095;</i>
     <a class="author" href="../pages/liveChat.php">0560030311</a>
       </span>
 </p>
-<hr>
+<!-- <hr> -->
+<div class="prodInfo">
+  <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3>
+  <!-- <hr> -->
 
+</div>
 <!-- Container for the image gallery -->
 <div class="container">
     <!-- Full-width images with number text -->
@@ -146,8 +170,8 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
     }
     </script>
 <div class="prodInfo" id="prodInfo">
-    <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3>
-    <hr>
+    <!-- <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
+    <!-- <hr> -->
     <p style="font-size: 20px; margin: 0%">Price: <span id="prc" style="color: firebrick;">$280.76</span></p>
     <br>
 
@@ -159,7 +183,7 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
     Ergonomic chiclet backlit keyboard and facial login via Windows Hello
     Exclusive Ergolift design for improved typing position
     Comprehensive connections including USB 3.1 Type-C, USB 3.1 Type A, USB 2.0, and HDMI; Wi-Fi 5/802.11ac Wi-Fi
-    <hr>
+    <!-- <hr> -->
 
 </div>
 
