@@ -547,12 +547,6 @@ label {
     font-size: 18px;
 }
 
-label{
-    display: block;
-    font-size: 22px;
-
-}
-
 .wideSelect{
     font-size: 21px;
     width: 6.9cm;
@@ -803,10 +797,10 @@ label{
         width: 7.8cm;
 
     }
-    label, .catSelect{
+    .catSelect{
         font-size: 18px;
     }
-    .field, .wideSelect, label{
+    .field, .wideSelect{
         width: 7.8cm;
 
     }
