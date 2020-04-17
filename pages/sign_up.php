@@ -52,13 +52,13 @@ if($nameErr!=""){
 <body>
 
     <?php include_once "base.php"; ?>
-    <div class="divSignUp" id="divup" style="padding-left: 1%;padding-right: 0%; height: auto;">
+    <div class="divSignUp" id="divup" >
 
         <h2>Sign Up</h2>
-        <div  style=""> <?php  echo $nameErr; ?> </div>
+        <div > <?php  echo $nameErr; ?> </div>
         <!-- <div id="signat" style="background-color:black;padding-top:0%;" ></div> -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"  >
-          <p>first name<span id="sun" style="color: chocolate;">*</span></p> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:80%;margin-top:0%;"><br>
+          first name<span id="sun" style="color: chocolate;">*</span> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:80%;margin-top:0%;"><br>
           phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="12" type="text" id="phon"  value="+966" class="text-F" id="number" style="width: 80%;" ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="your@gmail.com" class="text-F" style="width: 80%;" ><br> password
             <span style="color: chocolate;">*</span> <input type="password" id="pass" placeholder="password" class="text-F" style="width: 80%;" ><br> confirm password<span style="color: chocolate;">*</span><input type="password" id="cpass" placeholder="re-entir password"
                 class="text-F" style="width: 80%;" >
