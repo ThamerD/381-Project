@@ -9,7 +9,7 @@
             <img onclick="OpenNav()" width="30px" height="20px" id="open" src="../img/menu_icon.png" alt="">
             <ul class="navbar" id="nav">
                 <span onclick="closeNav()" id="close">X</span>
-                <li><a class="menu" href="Home.html">Home</a></li>
+                <li><a class="menu" href="../pages/Home.php">Home</a></li>
                 <li><a class="menu" href="#">Books</a></li>
                 <li><a class="menu" href="#">Cars</a></li>
                 <li><a class="menu" href="#">Clothing</a></li>

@@ -11,7 +11,7 @@
 
     <style>
         .coBody{
-            width: 550px;
+            width: 820px;
 
         }
         label{
@@ -21,7 +21,7 @@
         }
         @media only screen and (max-width:700px) {
             .coBody{
-            width: 90%;
+            width: 92%;
             max-width: 400px;
             /* background-color: pink; */
 
@@ -141,17 +141,30 @@
 
             <div class="left">
             <label for="description">Description:</label>
-            <textarea style=" margin:0cm 0cm 1cm; display: block;" id="description" cols="78" rows="5"></textarea>
+            <textarea style=" margin:0cm 0cm 1cm; display: block;" id="description" cols="115" rows="6"></textarea>
             </div>
         <div class="im">
-            <label style="display: inline" for="images">Images:</label>
-            <input style="margin:0cm 0cm 0.7cm" id="images" type="file" multiple>
+            <!-- <label style="display: inline" for="images">Images:</label> -->
+            <!-- <input style="margin:0cm 0cm 0.7cm" id="images" type="file" multiple onchange="readURL(this)"> -->
         </div>
+        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" multiple></p>
+<!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
+<p><img id="output" width="200" /></p>
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+
+
+
 
 
             <!-- <label for="brand">Brand:</label>
             <input id="brand" type="text" class="field"> -->
-            <input type="submit" class="btn" style="margin: auto;">
+            <input type="submit" class="btn" style="margin: auto; margin-top: 0.0cm;">
             <!-- Add category-specific inputs such as ODR, assign required and optional information -->
         </form>
     </div>
