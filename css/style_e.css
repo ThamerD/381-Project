@@ -21,7 +21,10 @@ label {
 
 .navbar {
     text-decoration: none;
-    display: inline;
+
+    /* This causes padding to be ignored */
+    /* display: inline; */
+
     /* float: none; */
     /* float: left; */
     padding-top: 5px;
@@ -150,11 +153,10 @@ label {
     background: rgb(10, 135, 255);
     color: white;
     padding: 8px;
-    width: 75px;
+    width: 77px;
     margin: 10px;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
-
 }
 
 .btn:hover {
@@ -820,7 +822,7 @@ label {
 /* Thamer Start */
 
 .field {
-    width: 6.8cm;
+    width: 10cm;
     height: .6cm;
     margin: 0cm 0cm .5cm;
     font-size: 18px;
@@ -828,7 +830,7 @@ label {
 
 .wideSelect {
     font-size: 21px;
-    width: 6.9cm;
+    width: 10cm;
     margin: 0cm 0cm .5cm;
     background-color: white;
 }
@@ -870,7 +872,7 @@ label {
 }
 
 .formP {
-    width: 15cm;
+    width: 22cm;
     margin: auto;
 }
 

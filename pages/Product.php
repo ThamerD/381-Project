@@ -118,22 +118,22 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
     <!-- Thumbnail images -->
     <div class="row">
       <div class="column">
-        <img class="demo cursor" src="../img/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        <img class="demo cursor" src="../img/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Product image 1">
       </div>
       <div class="column">
-        <img class="demo cursor" src="../img/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+        <img class="demo cursor" src="../img/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Product image 2">
       </div>
       <div class="column">
-        <img class="demo cursor" src="../img/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+        <img class="demo cursor" src="../img/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Product image 3">
       </div>
       <div class="column">
-        <img class="demo cursor" src="../img/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+        <img class="demo cursor" src="../img/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Product image 4">
       </div>
       <div class="column">
-        <img class="demo cursor" src="../img/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+        <img class="demo cursor" src="../img/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Product image 5">
       </div>
       <div class="column">
-        <img class="demo cursor" src="../img/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+        <img class="demo cursor" src="../img/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Product image 6">
       </div>
     </div>
 
@@ -186,8 +186,13 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
     <!-- <hr> -->
 
 </div>
-<button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left; height: 38px; width: 80px; font-size: 16px">Contact</button>
+<button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left;">Contact</button>
+<button onclick="location.href='../pages/addproduct.php'" type="button" class="btn" style="float: left; display: none;">Edit</button>
+<button onclick="location.href=''" type="button" class="btn" style="float: left; display: none;">Edit</button>
 
+
+<!-- MAGE BUTTONS BIGGER -->
+<!-- EDIT -->
 
 
 
