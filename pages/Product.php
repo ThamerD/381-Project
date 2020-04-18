@@ -186,6 +186,8 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
     <!-- <hr> -->
 
 </div>
+<button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left; height: 38px; width: 80px; font-size: 16px">Contact</button>
+
 
 
 
