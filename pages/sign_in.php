@@ -42,7 +42,7 @@
             <!-- <div id="error" style="margin-top:0%;margin-bottom:10%;"> <?php  echo $nameErr; ?> </div> -->
                 <input class="textr" type="email"  name="userNameLogIn" placeholder="&#9993; Email"  required><br>
                 <input  class="textr" type="password" name="passLogIn" placeholder="&#128477;password"  required><br>
-                <a href="#" class="linkbol">forget password?</a><br>
+                <a href="forgot_password.php" class="linkbol">forget password?</a><br>
                 <input type="submit" class="btnr" value="Log In"  >
             </form>
             <p>don't have an account?<a href="sign_up.php" class="linklog" >sign Up</a></p>

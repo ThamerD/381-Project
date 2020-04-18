@@ -179,6 +179,18 @@ label {
 
 /* albra start */
 
+.divforgot {
+    width: 30%;
+    height: 35%;
+    background-color: rgba(245, 245, 245, 0.788);
+    border-radius: 6px;
+    margin-top: 10%;
+    margin-left: 35%;
+    padding: 1%;
+    text-align: center;
+    height: auto;
+}
+
 .btnr {
     border-radius: 6px;
     /* border: solid 1px rgb(119, 136, 153); */
@@ -341,6 +353,17 @@ label {
         padding-right: 0%;
         height: auto;
         /* overflow: auto; */
+    }
+    .divforgot {
+        width: 50%;
+        height: 35%;
+        background-color: rgba(245, 245, 245, 0.788);
+        border-radius: 6px;
+        margin-top: 20%;
+        margin-left: 25%;
+        padding: 1%;
+        text-align: center;
+        height: auto;
     }
 }
 
