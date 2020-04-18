@@ -3,38 +3,43 @@
 
 <?php  
    
-// $nameErr="";
-// if ($_SERVER["REQUEST_METHOD"] == "POST"){
-// if(!$_POST["fName"]){
+$nameErr="";
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+if(isset($_POST["fName"]))
+if(!preg_match("/^[A-Za-z0-9-_ ]{2,31}$/",$_POST["fName"])){
+    $nameErr.=" &#10006; Enter a valid user name:<br>";  
+}
+//"/^[A-Za-z]{2,31}$/"
+ if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
+   $nameErr.="&#10006; pleas enter valid phone number<br>"; 
+ }
+ if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
+    $nameErr.=" &#10006; your password must be contain [number,chars,space]only:<br>";  
+}
 
 
-// }
-// if(isset($_POST["fName"]))
-// if(!preg_match("/^[A-Za-z]{2,31}$/",$_POST["fName"])){
-//     $nameErr.=" &#10006; Enter your name:<br>";
+if($_POST["pass"]!=$_POST["password"]){
 
+    $nameErr.=" &#10006; password and confirm password are not same :<br>";
 
-    
-// }
-
-//  if(!preg_match("/^\([0-9]{3}\)-[0-9]{3}-[0-9]{4}$/",$_POST["phone"])){
-//    $nameErr.="pleas enter valid phone number<br>"; 
-//  }
+}
+if(strlen($_POST["pass"])<8){
+    $nameErr.="&#10006; your password should be equal or grater than 8 digit";
+}
 
 
 
 
-// $nameErr.=" &#10006; Pleas enetr your password:<br>";
-// }
 // if($_POST["passLogIn"]){
 // $pass=$_POST["passLogIn"];
 // if(strlen($pass)<8)
 // $nameErr.="password shoud be greter than 8<br>";
 // }
-// if($nameErr!=""){
-//     $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
-//     }
-// }
+if($nameErr!=""){
+    $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
+    }
+}
 ?>
 
 
@@ -55,13 +60,13 @@
     <div class="divSignUp" id="divup" >
 
         <h2>Sign Up</h2>
-        <!-- <div > <?php  echo $nameErr; ?> </div> -->
-        <!-- <div id="signat" style="background-color:black;padding-top:0%;" ></div> -->
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"  >
-          user name<span id="sun" style="color: chocolate;">*</span> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:90%;margin-top:0%;"><br>
-          phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="12" type="text" id="phon"  value="+966" class="text-F" id="number" style="width: 90%;" ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="your@gmail.com" class="text-F" style="width: 90%;" ><br> password
-            <span style="color: chocolate;">*</span> <input type="password" id="pass" placeholder="password" class="text-F" style="width: 90%;" ><br> confirm password<span style="color: chocolate;">*</span><input type="password" id="cpass" placeholder="re-entir password"
-                class="text-F" style="width: 90%;" >
+        <div > <?php  echo $nameErr; ?> </div> 
+        <div id="signat" style="background-color:black;padding-top:0%;" ></div>
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" >
+          user name<span id="sun" style="color: chocolate;">*</span> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:90%;margin-top:0%;" required><br>
+          phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="10" type="text" id="phon" placeholder="0555555555" class="text-F" id="number" style="width: 90%;" required ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="example@gmail.com" class="text-F" style="width: 90%;" required><br> password
+            <span style="color: chocolate;">*</span> <input type="password" id="pass" placeholder="password" class="text-F" style="width: 90%;" name="pass" required><br> confirm password<span style="color: chocolate;">*</span><input name="password" type="password" id="cpass" placeholder="re-entir password"
+                class="text-F" style="width: 90%;" required >
             <div style="text-align: center;">
                 <input type="submit" value="sign up" class="btn" >
                 <p>have you account?<a href="sign_in.php" class="linklog">Log In</a></p>

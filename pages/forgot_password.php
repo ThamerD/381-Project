@@ -19,7 +19,7 @@
 
 <form action="" style="">
 <label style="text-align:left;">please enter your email address to get password</label><br> <input  placeholder="&#9993;Email address" type="email" name="forgotmail" class="textr" style="height:5%;width:60%;margin-top:5%;">
-<br><input type="submit" class="btnr" style="margin-top:7%;width:30%;" value="get password"  >
+<br><input type="submit" class="btne"  value="get password"  >
 
 </form>
 

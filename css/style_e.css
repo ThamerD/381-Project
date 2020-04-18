@@ -179,6 +179,23 @@ label {
 
 /* albra start */
 
+.lep {
+    position: relative;
+    top: -55px;
+    left: 100px;
+    /* color: blue; */
+}
+
+.divprof {
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+
 .divforgot {
     width: 30%;
     height: 35%;
@@ -206,6 +223,27 @@ label {
 }
 
 .btnr:hover {
+    /* border:#2882e9 solid 1px ; */
+    border: rgb(10, 110, 200) solid 1px;
+    /* background: #00499c; */
+    background: rgb(10, 110, 200);
+}
+
+.btne {
+    margin-top: 7%;
+    width: 30%;
+    border-radius: 6px;
+    border: solid 1px rgb(10, 135, 255);
+    background: rgb(10, 135, 255);
+    color: white;
+    padding: 8px;
+    /* width: 75px; */
+    /* margin: 10px; */
+    font-size: 14px;
+    /* margin-right: 1%; */
+}
+
+.btne:hover {
     /* border:#2882e9 solid 1px ; */
     border: rgb(10, 110, 200) solid 1px;
     /* background: #00499c; */
@@ -296,6 +334,36 @@ label {
         border: rgb(10, 110, 200) solid 1px;
         background: rgb(10, 110, 200);
     }
+    .divforgot {
+        width: 50%;
+        height: 35%;
+        background-color: rgba(245, 245, 245, 0.788);
+        border-radius: 6px;
+        margin-top: 10%;
+        margin-left: 35%;
+        padding: 1%;
+        text-align: center;
+        height: auto;
+    }
+    .btne {
+        margin-top: 7%;
+        width: 30%;
+        border-radius: 6px;
+        border: solid 1px rgb(10, 135, 255);
+        background: rgb(10, 135, 255);
+        color: white;
+        padding: 8px;
+        /* width: 75px; */
+        /* margin: 10px; */
+        font-size: 14px;
+        /* margin-right: 1%; */
+    }
+    .btne:hover {
+        /* border:#2882e9 solid 1px ; */
+        border: rgb(10, 110, 200) solid 1px;
+        /* background: #00499c; */
+        background: rgb(10, 110, 200);
+    }
     .textr {
         background-color: rgba(243, 243, 243, 0.507);
         margin-top: 5px;
@@ -381,6 +449,36 @@ label {
     }
     .btnr:hover {
         border: rgb(10, 110, 200) solid 1px;
+        background: rgb(10, 110, 200);
+    }
+    .divforgot {
+        width: 60%;
+        height: 35%;
+        background-color: rgba(245, 245, 245, 0.788);
+        border-radius: 6px;
+        margin-top: 24%;
+        margin-left: 20%;
+        padding: 1%;
+        text-align: center;
+        height: auto;
+    }
+    .btne {
+        margin-top: 7%;
+        width: 50%;
+        border-radius: 6px;
+        border: solid 1px rgb(10, 135, 255);
+        background: rgb(10, 135, 255);
+        color: white;
+        padding: 8px;
+        /* width: 75px; */
+        /* margin: 10px; */
+        font-size: 14px;
+        /* margin-right: 1%; */
+    }
+    .btne:hover {
+        /* border:#2882e9 solid 1px ; */
+        border: rgb(10, 110, 200) solid 1px;
+        /* background: #00499c; */
         background: rgb(10, 110, 200);
     }
     .textr {
