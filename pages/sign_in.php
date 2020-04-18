@@ -45,7 +45,7 @@
                 <a href="#" class="linkbol">forget password?</a><br>
                 <input type="submit" class="btnr" value="Log In"  >
             </form>
-            <p>don't have an account?<a href="sign up.html" class="linklog" >sign Up</a></p>
+            <p>don't have an account?<a href="sign_up.php" class="linklog" >sign Up</a></p>
             </div>   
     </div>
 
