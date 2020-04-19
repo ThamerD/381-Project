@@ -67,8 +67,19 @@ if(isset($_POST["fName"])){
 
 
 }
-mysqli_close($con);
-header("Location:sign_in.php?bye=Registration completed successfully");
+
+if($_POST["email"] && $_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_POST["password"]){
+
+
+    $sql="INSERT INTO user VALUES ('".$_POST['fName']."','".$_POST['email']."',".$_POST['phone'].",'".$_POST['pass']."',0)";
+    $res=mysqli_query($con,$sql);
+  if($res){
+    mysqli_close($con);
+    header("Location:sign_in.php?bye=Registration completed successfully try to log in");
+  }
+
+
+}
 
 
 
