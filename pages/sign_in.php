@@ -28,19 +28,10 @@ if($numb>0){
 
 }
 else{
-
-    $nameErr.="incorrect email/password";
-
-
+    $nameErr.="&#10006; incorrect email/password";
+    $var=mysqli_close($conn);
 }
-echo "here";
-
-
-
 }
-echo "nnnn";
-
-echo "here";
 
 
 
