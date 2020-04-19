@@ -3,7 +3,7 @@
 // $username = "username";
 // $password = "password";
 // $dbname = "myDB";
-$email='thamer@hotmail.com';
+$email=$_COOKIE['login'];
 $name = isset($_POST['name']) ? $_POST['name'] : null;
 // ID
 $pDesc = isset($_POST['description']) ? $_POST['description'] : null;
