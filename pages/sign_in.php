@@ -20,6 +20,8 @@ if($numb>0){
     setcookie("login",$_POST["emaillog"],time()+60*60);
     $var=mysqli_close($conn);
     header("Location:Home.php");
+
+
 }
 else{
     $nameErr.="&#10006; incorrect email/password";

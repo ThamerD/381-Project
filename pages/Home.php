@@ -53,7 +53,7 @@
     }
 	.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
         text-decoration: none;
-		/* background-color: #1f3f41; */
+		color: black;
 		/* background: black; */
 		/* outline: 0; */
 	}
@@ -95,82 +95,32 @@
     });
 </script>
     <div class="coBody coBody-HeightValue">
-        <div class = "newestProduct">
+
+        <!-- <div class = "newestProduct">
             <p>subject: MW3</p>
             <p>Type:Games</p>
             <p>price:$39</p>
+        </div> -->
+        <?php
+           $conn =new mysqli('localhost', 'root', '' , '381_db');
+           $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 10");
+           while( $row = mysqli_fetch_assoc( $result ) ){
+            // echo "$row";
+            // <p>{$row['PRODUCT_NAME']}</p>
+            // <p>{$row['PRODUCT_ID']}</p>
+            // echo"<p>{$row['PRICE']}</p>";
+            // <p>{$row['CATEGORY']}</p>
+            echo
+            "
+              <div class = 'newestProduct'>
+                <p>subject: {$row['PRODUCT_NAME']}</p>
+                <p>Type:{$row['CATEGORY']}</p>
+                <p>price:{$row['PRICE']} SAR</p>
         </div>
-        <div class = "newestProduct"> 
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div> <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div> <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div> <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div> <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
-        <div class = "newestProduct">
-            <p>subject: accentaccentaccent</p>
-            <p>Type:car</p>
-            <p>price:$80000</p>
-        </div>
+            ";
+          }
+           mysqlI_close($conn);
+        ?>
     </div>
     <script>
         function click_it(){
