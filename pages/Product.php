@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,27 +51,60 @@
 
 <body>
 
-<?php include_once "base.php"; ?>
+<?php include_once "base.php";
+
+?>
 <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
+
+<?php 
+$conn=mysqli_connect("localhost","root","","381_db");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// var qs = new Querystring();
+// var pid = qs.get("ID");
+$pid = $_GET['ID'];
+$prod = mysqli_query($conn,"SELECT * FROM `product` WHERE PRODUCT_ID = $pid");
+$row = mysqli_fetch_assoc($prod);
+$em = $row['EMAIL'];
+$pName = $row_['PRODUCT_NAME'];
+$pPrice = $row_['PRICE'];
+$pDesc = $row_['DESCRIPTION'];
+$au =  mysqli_query($conn,"SELECT * FROM `user` WHERE EMAIL = '$em'" );
+$row2 = mysqli_fetch_assoc($au);
+$aNum = $row2['PHONE_NUMBER'];
+$aName = $row2['UNAME'];
+
+
+
+echo"
+<p class='authInfo' id='athr'>
+  <strong>Author: </strong><a class='author' href='../pages/profile.php'>$aName</a> 
+  <span style='float:right;'>
+    <i class='fa'>&#xf095;</i>
+    <a class='author' href='../pages/liveChat.php'>0$aNum</a>
+      </span>
+</p>
+
+<div class='prodInfo'>
+  <h3 style='text-align: center;'>$pName</h3>
+</div>
+"
+
+?>
 
 <!-- <div class="imgDiv" id="imgDiv"> -->
 <!--  Add images as such: https://www.w3schools.com/howto/howto_js_slideshow.asp
 + zoom as such:https://www.w3schools.com/howto/howto_js_image_zoom.asp with image thumbnails
 ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
 <!-- IMAGES HERE -->
-<p class="authInfo" id="athr">
-  <strong>Author: </strong><a class="author" href="../pages/profile.php">Abu Raghad 511 </a> 
-  <span style="float:right;">
-    <i class="fa">&#xf095;</i>
-    <a class="author" href="../pages/liveChat.php">0560030311</a>
-      </span>
-</p>
 <!-- <hr> -->
-<div class="prodInfo">
-  <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3>
-  <!-- <hr> -->
+<!-- <div class="prodInfo">
+  <h3 style="text-align: center;">old name was here</h3>
+  <hr> -->
 
-</div>
+</div> -->
 <!-- Container for the image gallery -->
 <div class="container">
     <!-- Full-width images with number text -->
@@ -188,7 +220,7 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
 </div>
 <button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left;">Contact</button>
 <button onclick="location.href='../pages/addproduct.php'" type="button" class="btn" style="float: left; display: none;">Edit</button>
-<button onclick="location.href=''" type="button" class="btn" style="float: left; display: none;">Edit</button>
+<button onclick="location.href=''" type="button" class="btn" style="float: left; display: none;">Delete</button>
 
 
 <!-- MAGE BUTTONS BIGGER -->

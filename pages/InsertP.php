@@ -34,7 +34,7 @@ $conn=mysqli_connect("localhost","root","","381_db");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-    $sql="INSERT INTO `product`(`EMAIL`, `PRODUCT_NAME`, `PRODUCT_ID`, `DESCRIPTION`, `PRICE`,`CATEGORY`, `USED`, `BOOK_AUTHOR`, `BOOKI_SBN`,
+    $sql="INSERT INTO `product`(`EMAIL`, `PRODUCT_NAME`, `PRODUCT_ID`, `DESCRIPTION`, `PRICE`,`CATEGORY`, `USED`, `BOOK_AUTHOR`, `BOOK_ISBN`,
 `BOOK_NUM_PAGE`, `BOOK_CONDITION`, `BRAND`,`CAR_ODO`, `CAR_YEAR`, `CLOTHING_SIZE`, `GENRE`, `GAME_PLATFORM`, `MOVIE_YEAR`)
 VALUES ('$email','$name','','$pDesc','$pPrice','$pCat','$pCond','$pAuth','$pISBN','$pPages','$pBCond','$pBrand','$pODO','$pModel','$pSize','$pGenre','$pPlatform','$pYear')";
 // $test='test321';
