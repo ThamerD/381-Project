@@ -11,7 +11,7 @@
 
     <style>
         .coBody{
-            /* width: 1400px; */
+            width: 1400px;
             padding: 10px;
             height:100%;
 
@@ -79,7 +79,12 @@ $aNum = $row2['PHONE_NUMBER'];
 $aName = $row2['UNAME'];
 
 $im = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
-$imgNum=0;
+$im2 = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
+
+$imgNum=1;
+$imgNum2=1;
+
+
 
 echo"
 <p class='authInfo' id='athr'>
@@ -90,62 +95,41 @@ echo"
       </span>
 </p>
 
-<div class='container'>
-    <div class='mySlides'>
-      <div class='numbertext'>1 / 6</div>
-        <img src='../img/1.jpg' style='width:100%'>
-    </div>
-  
-    <div class='mySlides'>
-      <div class='numbertext'>2 / 6</div>
-        <img src='../img/2.jpg' style='width:100%'>
-    </div>
-  
-    <div class='mySlides'>
-      <div class='numbertext'>3 / 6</div>
-        <img src='../img/3.jpg' style='width:100%'>
-    </div>
-  
-    <div class='mySlides'>
-      <div class='numbertext'>4 / 6</div>
-        <img src='../img/4.jpg' style='width:100%'>
-    </div>
-  
-    <div class='mySlides'>
-      <div class='numbertext'>5 / 6</div>
-        <img src='../img/5.jpg' style='width:100%'>
-    </div>
-  
-    <div class='mySlides'>
-      <div class='numbertext'>6 / 6</div>
-        <img src='../img/6.jpg' style='width:100%'>
-    </div>
-  
-    <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
-    <a class='next' onclick='plusSlides(1)'>&#10095;</a>
-  
-    <div class='row'>
-      <div class='column'>
-        <img class='demo cursor' src='../img/1.jpg' style='width:100%' onclick='currentSlide(1)' alt='Product image 1'>
-      </div>
-      <div class='column'>
-        <img class='demo cursor' src='../img/2.jpg' style='width:100%' onclick='currentSlide(2)' alt='Product image 2'>
-      </div>
-      <div class='column'>
-        <img class='demo cursor' src='../img/3.jpg' style='width:100%' onclick='currentSlide(3)' alt='Product image 3'>
-      </div>
-      <div class='column'>
-        <img class='demo cursor' src='../img/4.jpg' style='width:100%' onclick='currentSlide(4)' alt='Product image 4'>
-      </div>
-      <div class='column'>
-        <img class='demo cursor' src='../img/5.jpg' style='width:100%' onclick='currentSlide(5)' alt='Product image 5'>
-      </div>
-      <div class='column'>
-        <img class='demo cursor' src='../img/6.jpg' style='width:100%' onclick='currentSlide(6)' alt='Product image 6'>
-      </div>
-    </div>
+<div class='container'>";
+while( $images = mysqli_fetch_assoc($im) ){
+  $photo = $images['IMAGE_DIR'];
+  echo"
+  <div class='mySlides'>
+  <img src='$photo' style='width:100%'>
+</div>
 
-  </div>
+  ";
+  
+  
+  $imgNum=$imgNum+1;
+}
+
+
+echo"
+<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+<a class='next' onclick='plusSlides(1)'>&#10095;</a>
+<div class='row'>";
+$imgNum=1;
+
+while( $images = mysqli_fetch_assoc($im2) ){
+  $photo = $images['IMAGE_DIR'];
+  echo"
+  <div class='column'>
+  <img class='demo cursor' src='$photo' style='width:100%' onclick='currentSlide($imgNum2)' alt='Product image $imgNum2'>
+</div>
+";
+$imgNum2=$imgNum2+1;
+}
+
+echo"
+<br>
+<br>
+
 
 
 <div class='prodInfo'>
