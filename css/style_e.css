@@ -932,7 +932,9 @@ label {
 }
 
 .catSelect {
-    font-size: 23px
+    font-size: 23px;
+    margin-bottom: 0.5cm;
+    
 }
 
 .km {

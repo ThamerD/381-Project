@@ -17,8 +17,10 @@
                 <!-- <li><a class="menu" href="#">Furniture</a></li> -->
                 <li><a class="menu" href="#">Games</a></li>
                 <li><a class="menu" href="#">Movies</a></li>
-                <li><a class="menu" href="#">About</a></li>
-                <li><a class="menu" href="#">Support</a></li>
+                <li><a class="menu" href="../pages/addproduct.php">Add Product</a></li>
+                <!-- These are useless since we did not create pages for them -->
+                <!-- <li><a class="menu" href="#">About</a></li> -->
+                <!-- <li><a class="menu" href="#">Support</a></li> -->
               <?php  if(!isset($_COOKIE["login"])){
                echo "<li><a class='sign' href='../pages/sign_up.php'>Sign Up</a></li>";
                 echo "<li><a class='sign' href='../pages/sign_in.php'>Sign In</a></li>";
