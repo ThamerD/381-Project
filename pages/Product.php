@@ -79,6 +79,8 @@ $au =  mysqli_query($conn,"SELECT * FROM `user` WHERE EMAIL = '$em'" );
 $row2 = mysqli_fetch_assoc($au);
 $aNum = $row2['PHONE_NUMBER'];
 $aName = $row2['UNAME'];
+$aEm = $row2['EMAIL'];
+
 
 $im = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
 $im2 = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
@@ -105,10 +107,10 @@ $pYear =  $row['MOVIE_YEAR'];
 
 echo"
 <p class='authInfo' id='athr'>
-  <strong>Author: </strong><a class='author' href='../pages/profile.php'>$aName</a> 
+  <strong>Author: </strong><a class='author' href='../pages/profile.php?email={$em}'>$aName</a> 
   <span style='float:right;'>
     <i class='fa'>&#xf095;</i>
-    <a class='author' href='../pages/liveChat.php'>0$aNum</a>
+    <a class='author' href='../pages/liveChat.php?email={$em}'>0$aNum</a>
       </span>
 </p>
 <br>";
@@ -159,10 +161,29 @@ echo"
     
     if($pYear!=null && $pYear!='0')
     echo"<p> Release year: $pYear</p>";
-    
-echo "</div>
-<div class='container'>";
 
+    if($aEm==$_COOKIE["login"]){
+echo"
+<input type='button' class='btn' onclick='' value='Edit'/>
+
+<form action='delete.php?ID=$pid' method='post'>
+<input type='submit' name='submit' class='btn' value='Delete'/>
+</form>
+
+";
+    }
+
+    else{
+$href ='../pages/liveChat.php?email={$em}';
+echo "
+<a href='../pages/liveChat.php?email={$em}' class='btn' style='text-decoration:none'>Contact</a>
+
+";
+}
+
+echo "
+</div>
+<div class='container'>";
 if (mysqli_num_rows($im)>0)
 while( $images = mysqli_fetch_assoc($im) ){
   $photo = $images['IMAGE_DIR'];
@@ -194,6 +215,7 @@ while( $images = mysqli_fetch_assoc($im2) ){
 ";
 $imgNum2=$imgNum2+1;
 }
+
 
 ?>
 
