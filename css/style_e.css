@@ -21,10 +21,8 @@ label {
 
 .navbar {
     text-decoration: none;
-
     /* This causes padding to be ignored */
     /* display: inline; */
-
     /* float: none; */
     /* float: left; */
     padding-top: 5px;
