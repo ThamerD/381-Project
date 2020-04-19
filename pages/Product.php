@@ -110,7 +110,7 @@ $pDesc
 </div>
 
 <div class='container'>";
-if (mysqli_num_rows($im)>1)
+if (mysqli_num_rows($im)<>0)
 while( $images = mysqli_fetch_assoc($im) ){
   $photo = $images['IMAGE_DIR'];
   echo"
@@ -130,7 +130,7 @@ echo"
 <a class='next' onclick='plusSlides(1)'>&#10095;</a>
 <div class='row'>";
 
-if (mysqli_num_rows($im)>1)
+if (mysqli_num_rows($im)<>0)
 while( $images = mysqli_fetch_assoc($im2) ){
   $photo = $images['IMAGE_DIR'];
   echo"
