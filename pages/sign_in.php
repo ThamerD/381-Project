@@ -8,20 +8,16 @@
 </head>
 
 <?php   
-$nameErr="";
-   
+$nameErr="";  
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-// if(isset($_POST["emaillog"]))
 if($_POST["passwo"] && $_POST["emaillog"]){
 $conn=mysqli_connect("localhost","root","","381_db");
 $qur="SELECT * FROM `user` WHERE user_pass=\"".$_POST['passwo']."\" and email=\"".$_POST['emaillog']."\"";
-// "SELECT * FORM `user` WHERE email='".$_POST['emaillog']."' AND USER_PASS='".$_POST['passwo']."'";
 $resl=mysqli_query($conn,$qur);
 mysqli_error($conn);
 $numb=mysqli_num_rows($resl);
 if($numb>0){
-    setcookie("login","yes",time()+60*60);
+    setcookie("login",$_POST["emaillog"],time()+60*60);
     $var=mysqli_close($conn);
     header("Location:Home.php");
 
@@ -33,26 +29,6 @@ else{
 }
 }
 
-
-
-
-
-
-
-
-// if(!$_POST["userNameLogIn"])
-// $nameErr.=" &#10006; Enter your name:<br>";
-
-
-// if(!$_POST["passLogIn"]){
-// $nameErr.=" &#10006; Pleas enetr your password:<br>";
-
-
-// if($_POST["passLogIn"]){
-// $pass=$_POST["passLogIn"];
-// if(strlen($pass)<8)
-// $nameErr.="password shoud be greter than 8<br>";
-// }
 if($nameErr!=""){
     $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
     }
