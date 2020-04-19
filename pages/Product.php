@@ -11,7 +11,7 @@
 
     <style>
         .coBody{
-            width: 1400px;
+            /* width: 1400px; */
             padding: 10px;
             height:100%;
 
@@ -35,11 +35,11 @@
         }
         .container {
         float: none;
-        width: 100%;    
+        width: 50%;    
       }
       .prodInfo{
         float: none;
-        width: 100%;
+        width: 50%;
     }
     }
     * {
@@ -94,8 +94,23 @@ echo"
     <a class='author' href='../pages/liveChat.php'>0$aNum</a>
       </span>
 </p>
+<br>
+
+<div class='prodInfo'>
+  <h3 style='text-align: center;'>$pName</h3>
+    <!-- <h3 style='text-align: center;'>ASUS VivoBook S15 S532 Thin & Light 15.6' FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
+    <!-- <hr> -->
+    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$pPrice</span></p>
+    <br>
+    <p style='white-space: pre-wrap;'>
+$pDesc
+</p>
+    <!-- <hr> -->
+
+</div>
 
 <div class='container'>";
+if (mysqli_num_rows($im)>1)
 while( $images = mysqli_fetch_assoc($im) ){
   $photo = $images['IMAGE_DIR'];
   echo"
@@ -114,8 +129,8 @@ echo"
 <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
 <a class='next' onclick='plusSlides(1)'>&#10095;</a>
 <div class='row'>";
-$imgNum=1;
 
+if (mysqli_num_rows($im)>1)
 while( $images = mysqli_fetch_assoc($im2) ){
   $photo = $images['IMAGE_DIR'];
   echo"
@@ -126,30 +141,6 @@ while( $images = mysqli_fetch_assoc($im2) ){
 $imgNum2=$imgNum2+1;
 }
 
-echo"
-<br>
-<br>
-
-
-
-<div class='prodInfo'>
-  <h3 style='text-align: center;'>$pName</h3>
-</div>
-
-<div class='prodInfo' id='prodInfo'>
-    <!-- <h3 style='text-align: center;'>ASUS VivoBook S15 S532 Thin & Light 15.6' FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
-    <!-- <hr> -->
-    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$pPrice</span></p>
-    <br>
-$pDesc
-    <!-- <hr> -->
-
-</div>
-<button onclick='location.href='../pages/liveChat.php'' type='button' class='btn' style='float: left;'>Contact</button>
-<button onclick='location.href='../pages/addproduct.php'' type='button' class='btn' style='float: left; display: none;'>Edit</button>
-<button onclick='location.href=''' type='button' class='btn' style='float: left; display: none;'>Delete</button>
-
-"
 ?>
 
 
