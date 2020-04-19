@@ -45,7 +45,8 @@ VALUES ('$email','$name','','$pDesc','$pPrice','$pCat','$pCond','$pAuth','$pISBN
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-     $last_id = mysqli_insert_id($conn);
+	 $last_id = mysqli_insert_id($conn);
+
 	for($i = 0; $i < count($_FILES['file_img']['name']); $i++)
 	{
 		$filetmp = $_FILES["file_img"]["tmp_name"][$i];
@@ -54,10 +55,10 @@ VALUES ('$email','$name','','$pDesc','$pPrice','$pCat','$pCond','$pAuth','$pISBN
 		$filepath = "photo/".$filename;
 	
 	move_uploaded_file($filetmp,$filepath);
-	
+	if($filename!=''){
 	$sql = "INSERT INTO `product_images`(`ID`, `IMAGE_DIR`) VALUES ('$last_id','$filepath')";
 	$result = mysqli_query($conn, $sql);
-	
+	}
 	}
  mysqli_close($conn);
 
