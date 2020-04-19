@@ -60,4 +60,8 @@ VALUES ('$email','$name','','$pDesc','$pPrice','$pCat','$pCond','$pAuth','$pISBN
 	
 	}
  mysqli_close($conn);
+
+ header("Location: home.php");
+die();
+
 ?>

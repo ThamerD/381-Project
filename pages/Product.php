@@ -65,18 +65,21 @@ if (!$conn) {
 // var qs = new Querystring();
 // var pid = qs.get("ID");
 $pid = $_GET['ID'];
+
 $prod = mysqli_query($conn,"SELECT * FROM `product` WHERE PRODUCT_ID = $pid");
 $row = mysqli_fetch_assoc($prod);
 $em = $row['EMAIL'];
-$pName = $row_['PRODUCT_NAME'];
-$pPrice = $row_['PRICE'];
-$pDesc = $row_['DESCRIPTION'];
+$pName = $row['PRODUCT_NAME'];
+$pPrice = $row['PRICE'];
+$pDesc = $row['DESCRIPTION'];
+
 $au =  mysqli_query($conn,"SELECT * FROM `user` WHERE EMAIL = '$em'" );
 $row2 = mysqli_fetch_assoc($au);
 $aNum = $row2['PHONE_NUMBER'];
 $aName = $row2['UNAME'];
 
-
+$im = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
+$imgNum=0;
 
 echo"
 <p class='authInfo' id='athr'>
@@ -87,92 +90,86 @@ echo"
       </span>
 </p>
 
-<div class='prodInfo'>
-  <h3 style='text-align: center;'>$pName</h3>
-</div>
-"
-
-?>
-
-<!-- <div class="imgDiv" id="imgDiv"> -->
-<!--  Add images as such: https://www.w3schools.com/howto/howto_js_slideshow.asp
-+ zoom as such:https://www.w3schools.com/howto/howto_js_image_zoom.asp with image thumbnails
-ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
-<!-- IMAGES HERE -->
-<!-- <hr> -->
-<!-- <div class="prodInfo">
-  <h3 style="text-align: center;">old name was here</h3>
-  <hr> -->
-
-</div> -->
-<!-- Container for the image gallery -->
-<div class="container">
-    <!-- Full-width images with number text -->
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-        <img src="../img/1.jpg" style="width:100%">
+<div class='container'>
+    <div class='mySlides'>
+      <div class='numbertext'>1 / 6</div>
+        <img src='../img/1.jpg' style='width:100%'>
     </div>
   
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-        <img src="../img/2.jpg" style="width:100%">
+    <div class='mySlides'>
+      <div class='numbertext'>2 / 6</div>
+        <img src='../img/2.jpg' style='width:100%'>
     </div>
   
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-        <img src="../img/3.jpg" style="width:100%">
+    <div class='mySlides'>
+      <div class='numbertext'>3 / 6</div>
+        <img src='../img/3.jpg' style='width:100%'>
     </div>
   
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-        <img src="../img/4.jpg" style="width:100%">
+    <div class='mySlides'>
+      <div class='numbertext'>4 / 6</div>
+        <img src='../img/4.jpg' style='width:100%'>
     </div>
   
-    <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-        <img src="../img/5.jpg" style="width:100%">
+    <div class='mySlides'>
+      <div class='numbertext'>5 / 6</div>
+        <img src='../img/5.jpg' style='width:100%'>
     </div>
   
-    <div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-        <img src="../img/6.jpg" style="width:100%">
+    <div class='mySlides'>
+      <div class='numbertext'>6 / 6</div>
+        <img src='../img/6.jpg' style='width:100%'>
     </div>
   
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+    <a class='next' onclick='plusSlides(1)'>&#10095;</a>
   
-    <!-- Image text -->
-    <!-- <div class="caption-container">
-      <p id="caption"></p>
-    </div> -->
-  
-    <!-- Thumbnail images -->
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="../img/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Product image 1">
+    <div class='row'>
+      <div class='column'>
+        <img class='demo cursor' src='../img/1.jpg' style='width:100%' onclick='currentSlide(1)' alt='Product image 1'>
       </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Product image 2">
+      <div class='column'>
+        <img class='demo cursor' src='../img/2.jpg' style='width:100%' onclick='currentSlide(2)' alt='Product image 2'>
       </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Product image 3">
+      <div class='column'>
+        <img class='demo cursor' src='../img/3.jpg' style='width:100%' onclick='currentSlide(3)' alt='Product image 3'>
       </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Product image 4">
+      <div class='column'>
+        <img class='demo cursor' src='../img/4.jpg' style='width:100%' onclick='currentSlide(4)' alt='Product image 4'>
       </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Product image 5">
+      <div class='column'>
+        <img class='demo cursor' src='../img/5.jpg' style='width:100%' onclick='currentSlide(5)' alt='Product image 5'>
       </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Product image 6">
+      <div class='column'>
+        <img class='demo cursor' src='../img/6.jpg' style='width:100%' onclick='currentSlide(6)' alt='Product image 6'>
       </div>
     </div>
 
   </div>
 
 
-<!-- </div> -->
+<div class='prodInfo'>
+  <h3 style='text-align: center;'>$pName</h3>
+</div>
+
+<div class='prodInfo' id='prodInfo'>
+    <!-- <h3 style='text-align: center;'>ASUS VivoBook S15 S532 Thin & Light 15.6' FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
+    <!-- <hr> -->
+    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$pPrice</span></p>
+    <br>
+$pDesc
+    <!-- <hr> -->
+
+</div>
+<button onclick='location.href='../pages/liveChat.php'' type='button' class='btn' style='float: left;'>Contact</button>
+<button onclick='location.href='../pages/addproduct.php'' type='button' class='btn' style='float: left; display: none;'>Edit</button>
+<button onclick='location.href=''' type='button' class='btn' style='float: left; display: none;'>Delete</button>
+
+"
+?>
+
+
+
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -201,26 +198,7 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
       dots[slideIndex-1].className += " active";
     }
     </script>
-<div class="prodInfo" id="prodInfo">
-    <!-- <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
-    <!-- <hr> -->
-    <p style="font-size: 20px; margin: 0%">Price: <span id="prc" style="color: firebrick;">$280.76</span></p>
-    <br>
 
-    ScreenPad 2.0 adds an interactive, secondary 5.65" touchscreen to enhance productivity
-    ScreenPad 2.0 fits a series of handy ASUS utility apps: Quick Key, Number Key, Handwriting, Slide Xpert, etc.
-    15.6" Full HD 4 way NanoEdge bezel display with stunning 88% screen-to-body ratio and 5.65" Full HD ScreenPad 2.0
-    Powerful Intel Core i7-8565U Processor (8M Cache, up to 4.6 GHz)
-    8 GB DDR4 RAM and PCIe NVMe 512 GB SSD; Windows 10 Home
-    Ergonomic chiclet backlit keyboard and facial login via Windows Hello
-    Exclusive Ergolift design for improved typing position
-    Comprehensive connections including USB 3.1 Type-C, USB 3.1 Type A, USB 2.0, and HDMI; Wi-Fi 5/802.11ac Wi-Fi
-    <!-- <hr> -->
-
-</div>
-<button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left;">Contact</button>
-<button onclick="location.href='../pages/addproduct.php'" type="button" class="btn" style="float: left; display: none;">Edit</button>
-<button onclick="location.href=''" type="button" class="btn" style="float: left; display: none;">Delete</button>
 
 
 <!-- MAGE BUTTONS BIGGER -->
