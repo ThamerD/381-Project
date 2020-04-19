@@ -1,29 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php   
-// $nameErr="";
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST"){
-// if(!$_POST["userNameLogIn"])
-// $nameErr.=" &#10006; Enter your name:<br>";
-
-
-// if(!$_POST["passLogIn"]){
-// $nameErr.=" &#10006; Pleas enetr your password:<br>";
-
-// }
-// // if($_POST["passLogIn"]){
-// // $pass=$_POST["passLogIn"];
-// // if(strlen($pass)<8)
-// // $nameErr.="password shoud be greter than 8<br>";
-// // }
-// if($nameErr!=""){
-//     $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
-//     }
-// }
-?>
-     
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,17 +7,75 @@
     <link rel="stylesheet" href="../css/style_e.css">
 </head>
 
+<?php   
+$nameErr="";
+   
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+// if(isset($_POST["emaillog"]))
+if($_POST["passwo"] && $_POST["emaillog"]){
+$conn=mysqli_connect("localhost","root","","381_db");
+$qur="SELECT * FROM `user` WHERE user_pass=\"".$_POST['passwo']."\" and email=\"".$_POST['emaillog']."\"";
+// "SELECT * FORM `user` WHERE email='".$_POST['emaillog']."' AND USER_PASS='".$_POST['passwo']."'";
+$resl=mysqli_query($conn,$qur);
+mysqli_error($conn);
+$numb=mysqli_num_rows($resl);
+if($numb>0){
+    setcookie("login","yes",time()+60*60);
+    $var=mysqli_close($conn);
+    header("Location:home.php");
+
+
+}
+else{
+    $nameErr.="&#10006; incorrect email/password";
+    $var=mysqli_close($conn);
+}
+}
+
+
+
+
+
+
+
+
+// if(!$_POST["userNameLogIn"])
+// $nameErr.=" &#10006; Enter your name:<br>";
+
+
+// if(!$_POST["passLogIn"]){
+// $nameErr.=" &#10006; Pleas enetr your password:<br>";
+
+
+// if($_POST["passLogIn"]){
+// $pass=$_POST["passLogIn"];
+// if(strlen($pass)<8)
+// $nameErr.="password shoud be greter than 8<br>";
+// }
+if($nameErr!=""){
+    $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
+    }
+}
+?>
+     
+
+
+
 <body>
     <?php include_once "base.php"; ?>
     <div class="divlogin">
   
             <h2>LOGIN </h2>
-     
+           <?php if (isset($_GET['bye'])) {
+        echo("<div style='padding:1%;color: rgb(7, 128, 3);border: 1px solid red;border-color: rgba(142, 243, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(142, 243, 95, 0.322);  text-align: left;''>&#10004; " . $_GET['bye'] . "</div>");
+    }
+     ?>
             <div class="divins">
-            <form style="" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" >
-            <!-- <div id="error" style="margin-top:0%;margin-bottom:10%;"> <?php  echo $nameErr; ?> </div> -->
-                <input class="textr" type="email"  name="userNameLogIn" placeholder="&#9993; Email"  required><br>
-                <input  class="textr" type="password" name="passLogIn" placeholder="&#128477;password"  required><br>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" >
+            <div id="error" style="margin-top:0%;margin-bottom:10%;"> <?php  echo $nameErr; ?> </div>
+                <input class="textr" type="email"  name="emaillog" placeholder="&#9993; Email"  required><br>
+                <input  class="textr" type="password" name="passwo" placeholder="&#128477;password"  required><br>
                 <a href="forgot_password.php" class="linkbol">forget password?</a><br>
                 <input type="submit" class="btnr" value="Log In"  >
             </form>

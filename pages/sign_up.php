@@ -6,27 +6,72 @@
 $nameErr="";
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-if(isset($_POST["fName"]))
-if(!preg_match("/^[A-Za-z0-9-_ ]{2,31}$/",$_POST["fName"])){
+
+if(!preg_match("/^[A-Za-z0-9-_]{2,31}$/",$_POST["fName"])){
     $nameErr.=" &#10006; Enter a valid user name:<br>";  
 }
 //"/^[A-Za-z]{2,31}$/"
- if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
+ else if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
    $nameErr.="&#10006; pleas enter valid phone number<br>"; 
  }
- if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
+ else if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
     $nameErr.=" &#10006; your password must be contain [number,chars,space]only:<br>";  
 }
 
 
-if($_POST["pass"]!=$_POST["password"]){
+else if($_POST["pass"]!=$_POST["password"]){
 
     $nameErr.=" &#10006; password and confirm password are not same :<br>";
 
 }
-if(strlen($_POST["pass"])<8){
+else if(strlen($_POST["pass"])<8){
     $nameErr.="&#10006; your password should be equal or grater than 8 digit";
 }
+$con=mysqli_connect("localhost","root","","381_db");
+    
+if(!$con){
+die("sorry we can not reach database");}
+else {
+
+
+if(isset($_POST["fName"])){
+        $sql="SELECT * FROM `user` WHERE UNAME='".$_POST['fName']."'";
+        $res=mysqli_query($con,$sql);
+      $num=mysqli_num_rows($res);
+     
+        if($num>0)
+      $nameErr.="this name alredy used";
+    }
+ if(isset($_POST["phone"])){
+        $sql="SELECT * FROM `user` WHERE PHONE_NUMBER='".$_POST['phone']."'";
+        $res=mysqli_query($con,$sql);
+       mysqli_error($con);
+      $num=mysqli_num_rows($res);
+        if($num>0)
+      $nameErr.="this phone number alredy used <br>";
+    }
+ 
+ if(isset($_POST["email"])){
+    $qu="SELECT * FROM 'user'";
+    
+    $sql = "SELECT * FROM `user` WHERE EMAIL='".$_POST['email']."'";
+     $res=mysqli_query($con,$sql);
+     if($res){
+     $num=mysqli_num_rows($res);
+    if($num>0)
+    $nameErr.="this email alredy exsist<br>";
+     }
+    }
+ 
+
+
+
+}
+mysqli_close($con);
+header("Location:sign_in.php?bye=Registration completed successfully");
+
+
+
 
 
 
@@ -64,7 +109,7 @@ if($nameErr!=""){
         <div id="signat" style="background-color:black;padding-top:0%;" ></div>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" >
           user name<span id="sun" style="color: chocolate;">*</span> <input type="text" id="fName" placeholder="first name" name="fName" class="text-F" style="width:90%;margin-top:0%;" required><br>
-          phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="10" type="text" id="phon" placeholder="0555555555" class="text-F" id="number" style="width: 90%;" required ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="example@gmail.com" class="text-F" style="width: 90%;" required><br> password
+          phone number<span style="color: chocolate;">*</span> <input size="10" name="phone" maxlength="10" type="text" id="phon" placeholder="0555555555" class="text-F" id="number" style="width: 90%;" required ><br> Email address<span style="color: chocolate;">*</span>            <input type="email" id="email" placeholder="example@gmail.com" class="text-F" style="width: 90%;" name="email" required><br> password
             <span style="color: chocolate;">*</span> <input type="password" id="pass" placeholder="password" class="text-F" style="width: 90%;" name="pass" required><br> confirm password<span style="color: chocolate;">*</span><input name="password" type="password" id="cpass" placeholder="re-entir password"
                 class="text-F" style="width: 90%;" required >
             <div style="text-align: center;">

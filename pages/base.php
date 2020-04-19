@@ -19,8 +19,14 @@
                 <li><a class="menu" href="#">Movies</a></li>
                 <li><a class="menu" href="#">About</a></li>
                 <li><a class="menu" href="#">Support</a></li>
-                <li><a class="sign" href="../pages/sign_up.php">Sign Up</a></li>
-                <li><a class="sign" href="../pages/sign_in.php">Sign In</a></li>
+              <?php  if(!isset($_COOKIE["login"])){
+               echo "<li><a class='sign' href='../pages/sign_up.php'>Sign Up</a></li>";
+                echo "<li><a class='sign' href='../pages/sign_in.php'>Sign In</a></li>";
+              }
+              else {
+                echo "<li><a class='sign' href='../pages/sign_out.php'>Sign out</a></li>";
+              }
+              ?>
             </ul>
         </div>
     </div>
