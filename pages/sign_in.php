@@ -23,7 +23,7 @@ $numb=mysqli_num_rows($resl);
 if($numb>0){
     setcookie("login","yes",time()+60*60);
     $var=mysqli_close($conn);
-    header("Location:home.php");
+    header("Location:Home.php");
 
 
 }
