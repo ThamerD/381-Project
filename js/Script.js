@@ -12,26 +12,26 @@ function checkSelection() {
   <div class="km">\
   <input name="odo" type="number" id="odo" class="field"/>\
   </div>\
-  <label for="condition">Condition:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="used">Used</option><option value="new">New</option></select>';
-  var cloInfo ='<label for="size" >Size:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select>';
+  <label for="condition">Condition:</label><select id="cond" name="cond" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="Used">Used</option><option value="New">New</option></select>';
+  var cloInfo ='<label for="size" >Size:</label><select id="size" name"size" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="Small">Small</option><option value="Medium">Medium</option><option value="Large">Large</option></select>';
   var cloInfoR ='<label for="brand">Brand:</label><input name="brand" id="brand" type="text" class="field">';
   var bokInfo ='<label for="author">Author:</label><input name="author" id="author" type="text" class="field">\
   <label for="pages">Number of Pages:</label><input name="pages" id="pages" type="number" class="field">';
   var bokInfoR='<label for="isbn">ISBN:</label><input name="isbn" id="isbn" type="text" class="field">\
-  <label for="condition">Condition:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="vg">Very Good</option><option value="g">Good</option><option value="f">Fair</option><option value="p">Poor</option></select>';
-  var movInfo='<label for="genre">Genre:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="action">Action</option><option value="comedy">Comedy</option><option value="drama">Drama</option><option value="horror">Horror</option>\
+  <label for="condition">Condition:</label><select id="bCond" name="bCond" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="Very Good">Very Good</option><option value="Good">Good</option><option value="Fair">Fair</option><option value="Poor">Poor</option></select>';
+  var movInfo='<label for="Genre">Genre:</label><select id="genre" name="genre" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="action">Action</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Horror">Horror</option>\
   <option value="romance">Romance</option></select>';
   var movInfoR='<label for="year">Release Year:</label><input name="year" id="year" type="number" class="field">';
-  var gamInfo='<label for="genre">Genre:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="fighting">Fighting</option><option value="role-playing">Role-playing</option><option value="shooter">Shooter</option>\
-  <option value="sport">Sport</option><option value="strategy">Strategy</option></select>';
-  var gamInfoR='<label for="platform">Platform:</label><select class= "wideSelect">\
-  <option value="" selected disabled hidden>Choose here</option><option value="switch">Nintendo Switch</option><option value="pc">PC</option><option value="playstation">Playstation</option>\
-  <option value="xbox">Xbox</option></select>'
+  var gamInfo='<label for="Genre">Genre:</label><select id="genre" name="genre" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="Fighting">Fighting</option><option value="Role-playing">Role-playing</option><option value="Shooter">Shooter</option>\
+  <option value="sport">Sport</option><option value="Strategy">Strategy</option></select>';
+  var gamInfoR='<label for="platform">Platform:</label><select id="platform" name="platform" class= "wideSelect">\
+  <option value="" selected disabled hidden>Choose here</option><option value="Nintendo Switch">Nintendo Switch</option><option value="PC">PC</option><option value="Playstation">Playstation</option>\
+  <option value="Xbox">Xbox</option></select>'
   switch(sel){
       case 0:
           wrap.innerHTML=bokInfo;
@@ -157,5 +157,29 @@ function formatCurrency(input, blur) {
   caret_pos = updated_len - original_len + caret_pos;
   input[0].setSelectionRange(caret_pos, caret_pos);
 }
+$(function() {
+  // Multiple images preview in browser
+  var imagesPreview = function(input, placeToInsertImagePreview) {
+
+      if (input.files) {
+          var filesAmount = input.files.length;
+
+          for (i = 0; i < filesAmount; i++) {
+              var reader = new FileReader();
+
+              reader.onload = function(event) {
+                  $($.parseHTML('<img>')).attr({'src': event.target.result, 'width':'200px' }).appendTo(placeToInsertImagePreview);
+              }
+
+              reader.readAsDataURL(input.files[i]);
+          }
+      }
+
+  };
+
+  $('#gallery-photo-add').on('change', function() {
+      imagesPreview(this, 'div.gallery');
+  });
+});
 
 /* Thamer End */

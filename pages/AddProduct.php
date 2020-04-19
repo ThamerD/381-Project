@@ -91,39 +91,36 @@
 
 <body>
 
-<?php include_once "base.php"; ?>
+<?php
+$conn=mysqli_connect("localhost","root","","381_db");
+if(!isset($_COOKIE["login"])){
+echo "<script> location.href='../pages/sign_in.php'; </script>";
+}
+
+include_once "base.php"; ?>
     <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
 
         <h2 style="margin-top: 0cm;">Add a Product</h2>
         <br>
 
+
+
+        <form class="formP" id="Product" method="post" action="../pages/insertP.php" enctype="multipart/form-data">
+
         <label style="display: inline;">Category:</label>
-        <select id="category" class="catSelect" onchange="checkSelection()">
-            <option>Books</option>
-            <option>Cars</option>
-            <option>Clothing</option>
-            <option>Electronics</option>
+        <select id="category" name="category" class="catSelect" onchange="checkSelection()">
+            <option value="Books" selected>Books</option>
+            <option value="Cars">Cars</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Electronics">Electronics</option>
             <!-- <option>Furniture</option> -->
-            <option>Games</option>
-            <option>Movies</option>
+            <option value="Games">Games</option>
+            <option value="Movies">Movies</option>
         </select>
         <br>
-        <!-- <label id="test"></label> -->
-        <br>
-
-        <script>
-        
-
-   
-
-
-
-        </script>
-
-        <form class="formP" id="Product" method="post" action="#">
             <div class="left">
                 <label for="name">Name:</label>
-                <input name="name" id="name" type="text" class="field" onblur="nameEmpty()">
+                <input name="name" id="name" type="text" class="field" onblur="nameEmpty()" required>
             </div>
 
             <div class="right">
@@ -131,9 +128,8 @@
                 <input name="price" class="field" id="currency-field" type="number" min="0.01" step="any" onblur="priceEmpty()"> -->
                 <label for="currency-field">Price:</label>
                 <input type="text" class="field" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-                 value="" data-type="currency" onblur="priceEmpty()">
+                 value="" data-type="currency" onblur="priceEmpty()" required>
             </div>
-<!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
 
             <div id="wrapper" class="left"></div>
             <div id="wrapperR" class="right"></div>
@@ -141,32 +137,18 @@
 
             <div class="left">
             <label for="description">Description:</label>
-            <textarea style=" margin:0cm 0cm 1cm; display: block;" id="description" cols="115" rows="6"></textarea>
+            <textarea style=" margin:0cm 0cm 1cm; display: block;" id="description" name="description" cols="115" rows="6"></textarea>
             </div>
         <div class="im">
-            <!-- <label style="display: inline" for="images">Images:</label> -->
-            <!-- <input style="margin:0cm 0cm 0.7cm" id="images" type="file" multiple onchange="readURL(this)"> -->
+        <input type="file" name="file_img[]" id="gallery-photo-add" multiple />
         </div>
-        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" multiple></p>
-<!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
-<p><img id="output" width="200" /></p>
-
-<script>
-var loadFile = function(event) {
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-};
-</script>
 
 
 
-
-
-            <!-- <label for="brand">Brand:</label>
-            <input id="brand" type="text" class="field"> -->
-            <input type="submit" class="btn" style="margin: auto; margin-top: 0.0cm;">
-            <!-- Add category-specific inputs such as ODR, assign required and optional information -->
+            <input type="submit" class="btn" style="margin: auto; margin-top: 0.5cm;">
         </form>
+        <div class="gallery" style="max-width: 100%;"></div>
+
     </div>
 </body>
 

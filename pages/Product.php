@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,95 +51,176 @@
 
 <body>
 
-<?php include_once "base.php"; ?>
+<?php include_once "base.php";
+
+?>
 <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
 
-<!-- <div class="imgDiv" id="imgDiv"> -->
-<!--  Add images as such: https://www.w3schools.com/howto/howto_js_slideshow.asp
-+ zoom as such:https://www.w3schools.com/howto/howto_js_image_zoom.asp with image thumbnails
-ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
-<!-- IMAGES HERE -->
-<p class="authInfo" id="athr">
-  <strong>Author: </strong><a class="author" href="../pages/profile.php">Abu Raghad 511 </a> 
-  <span style="float:right;">
-    <i class="fa">&#xf095;</i>
-    <a class="author" href="../pages/liveChat.php">0560030311</a>
+<?php 
+$conn=mysqli_connect("localhost","root","","381_db");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+
+// var qs = new Querystring();
+// var pid = qs.get("ID");
+$pid = $_GET['ID'];
+
+$prod = mysqli_query($conn,"SELECT * FROM `product` WHERE PRODUCT_ID = $pid");
+$row = mysqli_fetch_assoc($prod);
+$em = $row['EMAIL'];
+$pName = $row['PRODUCT_NAME'];
+$pPrice = $row['PRICE'];
+$pDesc = $row['DESCRIPTION'];
+
+$au =  mysqli_query($conn,"SELECT * FROM `user` WHERE EMAIL = '$em'" );
+$row2 = mysqli_fetch_assoc($au);
+$aNum = $row2['PHONE_NUMBER'];
+$aName = $row2['UNAME'];
+$aEm = $row2['EMAIL'];
+
+
+$im = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
+$im2 = mysqli_query($conn,"SELECT IMAGE_DIR FROM `product_images` WHERE ID = '$pid'" );
+
+$imgNum=1;
+$imgNum2=1;
+
+$pCat =  $row['CATEGORY'];
+$pCond =  $row['USED'] ;
+$pAuth =  $row['BOOK_AUTHOR'] ;
+$pISBN =  $row['BOOK_ISBN'];
+$pPages =  $row['BOOK_NUM_PAGE'];
+$pBCond =  $row['BOOK_CONDITION'];
+$pBrand =  $row['BRAND'];
+$pODO =  $row['CAR_ODO'];
+$pModel =  $row['CAR_YEAR'];
+$pSize =  $row['CLOTHING_SIZE'];
+$pGenre =  $row['GENRE'];
+$pPlatform =  $row['GAME_PLATFORM'];
+$pYear =  $row['MOVIE_YEAR'];
+
+
+
+
+echo"
+<p class='authInfo' id='athr'>
+  <strong>Author: </strong><a class='author' href='../pages/profile.php?email={$em}'>$aName</a> 
+  <span style='float:right;'>
+    <i class='fa'>&#xf095;</i>
+    <a class='author' href='../pages/liveChat.php?email={$em}'>0$aNum</a>
       </span>
 </p>
-<!-- <hr> -->
-<div class="prodInfo">
-  <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3>
-  <!-- <hr> -->
+<br>";
 
+
+echo"
+<div class='prodInfo'>
+  <h3 style='text-align: center;'>$pName</h3>
+    <!-- <h3 style='text-align: center;'>ASUS VivoBook S15 S532 Thin & Light 15.6' FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
+    <hr>
+    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$pPrice</span></p>
+    <br>
+    <p style='white-space: pre-wrap;'>$pDesc</p>
+    <hr>";
+
+    if($pCat!=null && $pCat!='0')
+    echo"<p> Category: $pCat</p>";
+    
+    if($pCond!=null && $pCond!='0')
+    echo"<p> Condition: $pCond</p>";
+    
+    if($pAuth!=null && $pAuth!='0')
+    echo"<p> Author: $pAuth</p>";
+    
+    if($pISBN!=null && $pISBN!='0')
+    echo"<p> ISBN: $pISBN</p>";
+    
+    if($pPages!=null && $pPages!='0')
+    echo"<p> Number of pages: $pPages</p>";
+    
+    if($pBCond!=null && $pBCond!='0')
+    echo"<p> Condition: $pBCond</p>";
+    
+    if($pBrand!=null && $pBrand!='0')
+    echo"<p> Brand: $pBrand</p>";
+    
+    if($pODO!=null && $pODO!='0')
+    echo"<p> ODO: $pODO</p>";
+    
+    if($pModel!=null && $pModel!='0')
+    echo"<p> Model: $pModel</p>";
+    
+    if($pGenre!=null && $pGenre!='0')
+    echo"<p> Genre: $pGenre</p>";
+    
+    if($pPlatform!=null && $pPlatform!='0')
+    echo"<p> Platform: $pPlatform</p>";
+    
+    if($pYear!=null && $pYear!='0')
+    echo"<p> Release year: $pYear</p>";
+
+    if($aEm==$_COOKIE["login"]){
+echo"
+<input type='button' class='btn' onclick='' value='Edit'/>
+
+<form action='delete.php?ID=$pid' method='post'>
+<input type='submit' name='submit' class='btn' value='Delete'/>
+</form>
+
+";
+    }
+
+    else{
+$href ='../pages/liveChat.php?email={$em}';
+echo "
+<a href='../pages/liveChat.php?email={$em}' class='btn' style='text-decoration:none'>Contact</a>
+
+";
+}
+
+echo "
 </div>
-<!-- Container for the image gallery -->
-<div class="container">
-    <!-- Full-width images with number text -->
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-        <img src="../img/1.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-        <img src="../img/2.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-        <img src="../img/3.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-        <img src="../img/4.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-        <img src="../img/5.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-        <img src="../img/6.jpg" style="width:100%">
-    </div>
-  
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    <!-- Image text -->
-    <!-- <div class="caption-container">
-      <p id="caption"></p>
-    </div> -->
-  
-    <!-- Thumbnail images -->
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="../img/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Product image 1">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Product image 2">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Product image 3">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Product image 4">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Product image 5">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="../img/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Product image 6">
-      </div>
-    </div>
+<div class='container'>";
+if (mysqli_num_rows($im)>0)
+while( $images = mysqli_fetch_assoc($im) ){
+  $photo = $images['IMAGE_DIR'];
+  echo"
+  <div class='mySlides'>
+  <img src='$photo' style='width:100%'>
+</div>
 
-  </div>
+  ";
+  
+  
+  $imgNum=$imgNum+1;
+}
 
 
-<!-- </div> -->
+if (mysqli_num_rows($im)>0)
+echo"
+<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+<a class='next' onclick='plusSlides(1)'>&#10095;</a>
+<div class='row'>";
+
+if (mysqli_num_rows($im2)>0)
+while( $images = mysqli_fetch_assoc($im2) ){
+  $photo = $images['IMAGE_DIR'];
+  echo"
+  <div class='column'>
+  <img class='demo cursor' src='$photo' style='width:100%' onclick='currentSlide($imgNum2)' alt='Product image $imgNum2'>
+</div>
+";
+$imgNum2=$imgNum2+1;
+}
+
+
+?>
+
+
+
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -169,26 +249,7 @@ ex:  https://bit.ly/3b14ShD and https://bit.ly/39VULJD -->
       dots[slideIndex-1].className += " active";
     }
     </script>
-<div class="prodInfo" id="prodInfo">
-    <!-- <h3 style="text-align: center;">ASUS VivoBook S15 S532 Thin & Light 15.6" FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
-    <!-- <hr> -->
-    <p style="font-size: 20px; margin: 0%">Price: <span id="prc" style="color: firebrick;">$280.76</span></p>
-    <br>
 
-    ScreenPad 2.0 adds an interactive, secondary 5.65" touchscreen to enhance productivity
-    ScreenPad 2.0 fits a series of handy ASUS utility apps: Quick Key, Number Key, Handwriting, Slide Xpert, etc.
-    15.6" Full HD 4 way NanoEdge bezel display with stunning 88% screen-to-body ratio and 5.65" Full HD ScreenPad 2.0
-    Powerful Intel Core i7-8565U Processor (8M Cache, up to 4.6 GHz)
-    8 GB DDR4 RAM and PCIe NVMe 512 GB SSD; Windows 10 Home
-    Ergonomic chiclet backlit keyboard and facial login via Windows Hello
-    Exclusive Ergolift design for improved typing position
-    Comprehensive connections including USB 3.1 Type-C, USB 3.1 Type A, USB 2.0, and HDMI; Wi-Fi 5/802.11ac Wi-Fi
-    <!-- <hr> -->
-
-</div>
-<button onclick="location.href='../pages/liveChat.php'" type="button" class="btn" style="float: left;">Contact</button>
-<button onclick="location.href='../pages/addproduct.php'" type="button" class="btn" style="float: left; display: none;">Edit</button>
-<button onclick="location.href=''" type="button" class="btn" style="float: left; display: none;">Edit</button>
 
 
 <!-- MAGE BUTTONS BIGGER -->
