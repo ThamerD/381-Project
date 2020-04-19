@@ -10,7 +10,7 @@
 
 <?php  include_once "base.php";?>
 
-<div class="divprof" >
+<div class="coBody" id="coBody">
 
 <!-- <table style="width:40%;">
 <tr>
@@ -27,12 +27,12 @@
 </table> -->
 <div id="coBody" style="background-color: rgba(98, 99, 100, 0.39);border-radius: 10px;padding:1%;">
 <img src="..\img\download.png" alt="img user"  width="80px" style="border-radius:50%;"></div>  <label class="lep"><b> name user </b>
-<form action="">
+<!-- <form action=""> -->
 <input type="submit" class="btnr">
 
 
 
-</form>
+<!-- </form> -->
 
 </label> 
 

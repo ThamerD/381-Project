@@ -5,20 +5,17 @@
    
 $nameErr="";
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-
+    
+//here we check the user input 
 if(!preg_match("/^[A-Za-z0-9-_]{2,31}$/",$_POST["fName"])){
     $nameErr.=" &#10006; Enter a valid user name:<br>";  
 }
-//"/^[A-Za-z]{2,31}$/"
  else if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
    $nameErr.="&#10006; pleas enter valid phone number<br>"; 
  }
  else if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
     $nameErr.=" &#10006; your password must be contain [number,chars,space]only:<br>";  
 }
-
-
 else if($_POST["pass"]!=$_POST["password"]){
 
     $nameErr.=" &#10006; password and confirm password are not same :<br>";
@@ -27,6 +24,7 @@ else if($_POST["pass"]!=$_POST["password"]){
 else if(strlen($_POST["pass"])<8){
     $nameErr.="&#10006; your password should be equal or grater than 8 digit";
 }
+//here we will start to connect to database and check if there is any confilct
 $con=mysqli_connect("localhost","root","","381_db");
     
 if(!$con){
@@ -40,7 +38,7 @@ if(isset($_POST["fName"])){
       $num=mysqli_num_rows($res);
      
         if($num>0)
-      $nameErr.="this name alredy used";
+      $nameErr.="&#10006; this name alredy used";
     }
  if(isset($_POST["phone"])){
         $sql="SELECT * FROM `user` WHERE PHONE_NUMBER='".$_POST['phone']."'";
@@ -48,7 +46,7 @@ if(isset($_POST["fName"])){
        mysqli_error($con);
       $num=mysqli_num_rows($res);
         if($num>0)
-      $nameErr.="this phone number alredy used <br>";
+      $nameErr.="&#10006; this phone number alredy used <br>";
     }
  
  if(isset($_POST["email"])){
@@ -59,15 +57,11 @@ if(isset($_POST["fName"])){
      if($res){
      $num=mysqli_num_rows($res);
     if($num>0)
-    $nameErr.="this email alredy exsist<br>";
+    $nameErr.="&#10006; this email alredy exsist<br>";
      }
     }
- 
-
-
-
 }
-
+//here we will insert user input and we check every thing is good 
 if($_POST["email"] && $_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_POST["password"]){
 
 
@@ -77,32 +71,15 @@ if($_POST["email"] && $_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_
     mysqli_close($con);
     header("Location:sign_in.php?bye=Registration completed successfully try to log in");
   }
-
-
+else {
+    die("can not select ");
 }
-
-
-
-
-
-
-
-// if($_POST["passLogIn"]){
-// $pass=$_POST["passLogIn"];
-// if(strlen($pass)<8)
-// $nameErr.="password shoud be greter than 8<br>";
-// }
+}
 if($nameErr!=""){
     $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
     }
 }
 ?>
-
-
-
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,53 +110,6 @@ if($nameErr!=""){
   
 
     <i class="fas fa-eye"></i>
-
-<!-- 
-<script>
-
-function fun(){
-if(document.getElementById("fName").value.trim()==""){
-    var error="";
-    error+="pleas enter first name";
-    document.getElementById("signat").innerHTML="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;'>#"+error+"</div>";
-
-
-
-
-   return false;
-
-
-}
-
-
-
-
-
-
-
-
-
-
-var num=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-
-if(document.getElementById("phon").value.match(num)){
-    return ture;
-}
-else{
-    var error="";
-    error+="pleas enter falid password";
-    document.getElementById("signat").innerHTML="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;'>#"+error+"</div>";
-// return false;
-}
-
-
-
-}
-
-
-</script> -->
-
-
 </body>
 
 </html>
