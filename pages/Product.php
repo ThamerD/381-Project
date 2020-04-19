@@ -128,10 +128,12 @@ echo"
 
     if($pCat!=null && $pCat!='0')
     echo"<p> Category: $pCat</p>";
-    
+
+    if ($pCat=='Cars')
     if($pCond!=null && $pCond!='0')
     echo"<p> Condition: $pCond</p>";
     
+    if ($pCat=='Books'){
     if($pAuth!=null && $pAuth!='0')
     echo"<p> Author: $pAuth</p>";
     
@@ -143,30 +145,44 @@ echo"
     
     if($pBCond!=null && $pBCond!='0')
     echo"<p> Condition: $pBCond</p>";
-    
+    }
+
+    if ($pCat=='Clothing' || $pCat=='Cars')
     if($pBrand!=null && $pBrand!='0')
     echo"<p> Brand: $pBrand</p>";
-    
+
+    if ($pCat=='Car'){
     if($pODO!=null && $pODO!='0')
     echo"<p> ODO: $pODO</p>";
     
     if($pModel!=null && $pModel!='0')
     echo"<p> Model: $pModel</p>";
-    
+  }
+
+  if ($pCat=='Clothing')
+  if($pSize!=null && $pSize!='0')
+  echo"<p> Size: $pSize</p>";
+
+   if ($pCat=='Games' || $pCat=='Movies')
     if($pGenre!=null && $pGenre!='0')
     echo"<p> Genre: $pGenre</p>";
     
+    if ($pCat=='Games')
     if($pPlatform!=null && $pPlatform!='0')
     echo"<p> Platform: $pPlatform</p>";
-    
+
+    if ($pCat=='Movies')
     if($pYear!=null && $pYear!='0')
     echo"<p> Release year: $pYear</p>";
-
-    if($aEm==$_COOKIE["login"]){
+    if(isset($_COOKIE["login"]) && $aEm==$_COOKIE["login"]){
 echo"
-<input type='button' class='btn' onclick='' value='Edit'/>
 
-<form action='delete.php?ID=$pid' method='post'>
+<form action='EditProduct.php?ID=$pid' method='post' style='float: left'>
+<input type='submit' name='submit' class='btn' value='Edit'/>
+</form>
+
+
+<form action='delete.php?ID=$pid' method='post' style='float: left'>
 <input type='submit' name='submit' class='btn' value='Delete'/>
 </form>
 
