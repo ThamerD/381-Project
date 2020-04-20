@@ -73,7 +73,7 @@
                 
             </div>
         </div>
-        <input type="submit" style='position:relative;left:45vw;top:4vh;' class='btn btnSea'  id="myBtn-Home" value="Search" >
+        <input type="submit" style='position:relative;left:45vw;top:9vh;' class='btn btnSea'  id="myBtn-Home" value="Search" >
     </form>
     
     <script>

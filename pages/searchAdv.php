@@ -32,7 +32,7 @@ if(!isset($_COOKIE["login"])){
 <?php include_once "base.php"; ?>
     <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
 
-        <h2 style="margin-top: 0cm;">Add a Product</h2>
+        <h2 style="margin-top: 0cm;">Search a Product</h2>
         <br>
 <form action="listProduct.php" method='POST'>
 
