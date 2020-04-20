@@ -67,12 +67,14 @@
                 Search with little word
             </p>
             <p id="error-Search">Please fill the field</p>  
-            
-    <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput">
-            
-    </div>
-    </div>
-    <input type="button" id="myBtn-Home" value="" >
+            <form action="listProduct.php" method="POST">
+
+                <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput">
+                
+            </div>
+        </div>
+        <input type="submit" style='position:relative;left:45vw;top:4vh;' class='btn btnSea'  id="myBtn-Home" value="Search" >
+    </form>
     
     <script>
     $(document).ready(function () {

@@ -34,43 +34,45 @@ if(!isset($_COOKIE["login"])){
 
         <h2 style="margin-top: 0cm;">Add a Product</h2>
         <br>
+<form action="listProduct.php" method='POST'>
 
-        <label style="display: inline;">Category:</label>
-        <select id="category" class="catSelect" onchange="SelectType()">
-            <option>Books</option>
-            <option>Cars</option>
-            <option>Clothing</option>
-            <option>Electronics</option>
-            <!-- <option>Furniture</option> -->
-            <option>Games</option>
-            <option>Movies</option>
-        </select>
-        <br>
-        <!-- <label id="test"></label> -->
-        <br>
-        <p style="text-align:left;">product name</p>
-        <input type="text" style="float:none; width:100%;" class="text-F" onblur="nameEmptyS()" id="productname" name="nam" placeholder="name">
-        <br>
-        <p style="text-align:left;">price range:</p>
-        <input type="text" onblur="priceFEmpty()" id="from" class="text-F LeftWidth"  placeholder="From" >
-        <input type="text" onblur="priceUEmpty()" id="until" class="text-F RightWidth"  placeholder="Until">
-        <br>
-        <br>
-        <br>
-        <!-- <br> -->
-        <div id="alternativeEle">
-        <input type="text"  class="text-F LeftWidth" id="authorId" onblur="isEmpty('authorId')" placeholder="Author" >
-        <input type="text" class="text-F RightWidth" id="isbnId" onblur="isEmpty('isbnId')"  placeholder="ISBN">
-        <select class="text-F LeftWidth" id="idid" onblur="checkSelect('idid')">
-        <option value="Choose here"  class="hideOption" hidden="">Choose here</option>
-        <option value="Very Good">Very Good</option>
+    <label style="display: inline;">Category:</label>
+    <select id="category" name='category' class="catSelect" onchange="SelectType()">
+        <option>Books</option>
+        <option>Cars</option>
+        <option>Clothing</option>
+        <option>Electronics</option>
+        <!-- <option>Furniture</option> -->
+        <option>Games</option>
+        <option>Movies</option>
+    </select>
+    <br>
+    <!-- <label id="test"></label> -->
+    <br>
+    <p style="text-align:left;">product name</p>
+    <input type="text" style="float:none; width:100%;" class="text-F" onblur="nameEmptyS()" id="productname" name="name" placeholder="name">
+    <br>
+    <p style="text-align:left;">price range:</p>
+    <input type="text" onblur="priceFEmpty()" name='priceFrom' id="from" class="text-F LeftWidth"  placeholder="From" >
+    <input type="text" onblur="priceUEmpty()" name='priceUntil' id="until" class="text-F RightWidth"  placeholder="Until">
+    <br>
+    <br>
+    <br>
+    <!-- <br> -->
+    <div id="alternativeEle">
+        <input type="text"  class="text-F LeftWidth" name='author' id="authorId" onblur="isEmpty('authorId')" placeholder="Author" >
+        <input type="text" class="text-F RightWidth" name='isbn' id="isbnId" onblur="isEmpty('isbnId')"  placeholder="ISBN">
+        <select class="text-F LeftWidth" id="idid" name='bCond' onblur="checkSelect('idid')">
+            <option value="Choose here"  class="hideOption" hidden="">Choose here</option>
+            <option value="Very Good">Very Good</option>
         <option value="Good">Good</option>
         <option value="Fair">Fair</option>
         <option value="Poor">Poor</option>
-        </select>
-        </div>
-        <input type="submit" value="Search" onclick="checkAll()" id="searchBtn" class="btn btn2" >
-        <script>
+    </select>
+</div>
+<input type="submit" value="Search" onclick="checkAll()" id="searchBtn" class="btn btn2" >
+</form>
+<script>
         //  check after press button "searchBtn" all fields not empty and true at all
         function checkAll(){
             var i=document.getElementById("searchBtn");
@@ -124,46 +126,46 @@ if(!isset($_COOKIE["login"])){
                     $('option.hideOption').prop('disabled', true);  
         }
         // this method for insert attrbuites of book
-        function BookAtt(){
+        function BookAtt(){//done
             deleteChildInAlternativeEle();
             AddElementForm ("alternativeEle","input","text","isEmpty('authorId')","author","text-F LeftWidth","authorId","","","Author");
             AddElementForm ("alternativeEle","input","text","isEmpty('isbnId')","isbn","text-F RightWidth","isbnId","","","ISBN");
-            addSelectForm("alternativeEle","text-F LeftWidth","idid","checkSelect('idid')","Choose here","Very Good","Good","Fair","Poor");
+            addSelectForm("alternativeEle",'bCond',"text-F LeftWidth","idid","checkSelect('idid')","Choose here","Very Good","Good","Fair","Poor");
             hideLabelOption();
         }
         // this method for insert attrbuites of car
-        function CarAtt(){
+        function CarAtt(){//done
             deleteChildInAlternativeEle();
             AddElementForm ("alternativeEle","input","text","isEmpty('brandId')","brand","text-F LeftWidth","brandId","","","Brand");
             AddElementForm ("alternativeEle","input","number","CheckNumber('odoId')","odo","text-F RightWidth","odoId","","","odo");
             AddElementForm ("alternativeEle","input","number","checkYear('modelYearId')","modelYear","text-F LeftWidth","modelYearId","","","Model Year");
-            addSelectForm("alternativeEle","text-F RightWidth","idid","checkSelect('idid')","Choose here","New","Used");
+            addSelectForm("alternativeEle",'condcar',"text-F RightWidth","idid","checkSelect('idid')","Choose here","New","Used");
             hideLabelOption();
         }
         // this method for insert attrbuites of clothing
-        function ClothingAtt(){
+        function ClothingAtt(){//done
             deleteChildInAlternativeEle();
-            AddElementForm ("alternativeEle","input","text","isEmpty('brandId')","brands","text-F LeftWidth","brandId","","","Brand");
-            addSelectForm("alternativeEle","text-F RightWidth","idid","checkSelect('idid')","Choose here","Small","Medium","Large");
+            AddElementForm ("alternativeEle","input","text","isEmpty('brandId')","brand","text-F LeftWidth","brandId","","","Brand");
+            addSelectForm("alternativeEle",'size',"text-F RightWidth","idid","checkSelect('idid')","Choose here","Small","Medium","Large");
             hideLabelOption();
         }
         // this method for insert attrbuites of games
-        function GamesAtt(){
+        function GamesAtt(){//done
             deleteChildInAlternativeEle();
-            addSelectForm("alternativeEle","text-F LeftWidth","idid","checkSelect('idid')","Genre","Fighting","Role-playing","Shooter","Sport","Strategy");
-            addSelectForm("alternativeEle","text-F RightWidth","idid2","checkSelect('idid2')","Platform","Nintendo Switch","PC","Playstation","Xbox");
+            addSelectForm("alternativeEle",'gener',"text-F LeftWidth","idid","checkSelect('idid')","Genre","Fighting","Role-playing","Shooter","Sport","Strategy");
+            addSelectForm("alternativeEle",'platform',"text-F RightWidth","idid2","checkSelect('idid2')","Platform","Nintendo Switch","PC","Playstation","Xbox");
             hideLabelOption(); 
         }
         // this method for insert attrbuites of movies
         function MovieAtt(){
             deleteChildInAlternativeEle();
-            addSelectForm("alternativeEle","text-F LeftWidth","idid","checkSelect('idid')","Genre","Action","Comedy","Drama","Horror","Romance");
+            addSelectForm("alternativeEle",'gener',"text-F LeftWidth","idid","checkSelect('idid')","Genre","Action","Comedy","Drama","Horror","Romance");
             AddElementForm ("alternativeEle","input","number","checkYear('releaseYearId')","releaseYear","text-F RightWidth","releaseYearId","","","Release Year");
             hideLabelOption();
         }
         // this method to insert element of type select with multi options elements for insert multi option write with that instruction
         // addSelectForm(where,oClass,oId,onblur,"for show text","option1","option2","option3")
-        function addSelectForm(where,oClass,oId,oonblur,...restArgs){
+        function addSelectForm(where,oname,oClass,oId,oonblur,...restArgs){
             var Addon = document.getElementById(where);
             var newElement =document.createElement("select");
             Addon.appendChild(newElement);
@@ -183,6 +185,7 @@ if(!isset($_COOKIE["login"])){
             newElement.setAttribute("class",oClass);
             newElement.setAttribute("id",oId);
             newElement.setAttribute("onblur",oonblur);
+            newElement.setAttribute("name",oname);
         }
       
         // this method for change between attr by index of select is called #category
