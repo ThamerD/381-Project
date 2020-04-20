@@ -1,3 +1,11 @@
+<?php
+// $conn=mysqli_connect("localhost","root","","381_db");
+if(!isset($_COOKIE["login"])){
+echo "<script> location.href='../pages/sign_in.php'; </script>";
+}
+if(!isset($_GET['email']))
+echo "<script> location.href='../pages/inbox.php'; </script>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
