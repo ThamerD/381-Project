@@ -112,13 +112,13 @@
             // <p>{$row['CATEGORY']}</p>
             echo
             "
+            <div class = 'newestProduct' >
             <a href='product.php?ID={$row['PRODUCT_ID']}'>
-              <div class = 'newestProduct' >
                 <p>subject: {$row['PRODUCT_NAME']}</p>
                 <p>Type:{$row['CATEGORY']}</p>
                 <p>price:{$row['PRICE']} SAR</p>
+                </a>
         </div>
-        </a>
             ";
           }
            mysqlI_close($conn);
