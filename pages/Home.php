@@ -105,7 +105,7 @@
         </div> -->
         <?php
            $conn =new mysqli('localhost', 'root', '' , '381_db');
-           $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 10");
+           $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 16");
            while( $row = mysqli_fetch_assoc( $result ) ){
             // echo "$row";
             // <p>{$row['PRODUCT_NAME']}</p>
@@ -115,10 +115,10 @@
             echo
             "
             <div class = 'newestProduct' >
-            <a href='product.php?ID={$row['PRODUCT_ID']}'>
-                <p>subject: {$row['PRODUCT_NAME']}</p>
-                <p>Type:{$row['CATEGORY']}</p>
-                <p>price:{$row['PRICE']} SAR</p>
+            <a href='product.php?ID={$row['PRODUCT_ID']}' style='text-decoration: none;'>
+                <p>{$row['PRODUCT_NAME']}</p>
+                <p>Type: {$row['CATEGORY']}</p>
+                <p>{$row['PRICE']}</p>
                 </a>
         </div>
             ";

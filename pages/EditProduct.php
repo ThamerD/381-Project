@@ -168,6 +168,7 @@ echo"
 
         </script>
         <br>
+        <br>
             <div class='left'>
                 <label for='name'>Name:</label>
                 <input name='name' id='name' type='text' class='field' onblur='nameEmpty()' required value='$pName'>

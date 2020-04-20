@@ -13,7 +13,7 @@
         .coBody{
             /* width: 1400px; */
             padding: 10px;
-            height:100%;
+            /* height:100%; */
 
         }
           /* Position the image container (needed to position the left and right arrows) */
@@ -206,7 +206,7 @@ while( $images = mysqli_fetch_assoc($im) ){
   $photo = $images['IMAGE_DIR'];
   echo"
   <div class='mySlides'>
-  <img src='$photo' style='width:100%'>
+  <img src='$photo' style='max-width:100%; max-height: 500px'>
 </div>
 
   ";
