@@ -118,6 +118,7 @@ include_once "base.php"; ?>
             <option value="Movies">Movies</option>
         </select>
         <br>
+        <br>
             <div class="left">
                 <label for="name">Name:</label>
                 <input name="name" id="name" type="text" class="field" onblur="nameEmpty()" required>
