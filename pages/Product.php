@@ -175,6 +175,7 @@ echo"
     if($pYear!=null && $pYear!='0')
     echo"<p> Release year: $pYear</p>";
     if(isset($_COOKIE["login"]) && $aEm==$_COOKIE["login"]){
+      $msg = 'Are you sure you wish to delete this product?';
 echo"
 
 <form action='EditProduct.php?ID=$pid' method='post' style='float: left'>
@@ -182,7 +183,7 @@ echo"
 </form>
 
 
-<form action='delete.php?ID=$pid' method='post' style='float: left'>
+<form onsubmit=\"return confirm('Do you really want to delete this product?');\" action='delete.php?ID=$pid' method='post' style='float: left';>
 <input type='submit' name='submit' class='btn' value='Delete'/>
 </form>
 
