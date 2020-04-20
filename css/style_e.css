@@ -192,6 +192,7 @@ label {
     margin: 10px;
     word-wrap: break-word;
     height: 85px;
+    height: auto;
     /* display:; */
 }
 
@@ -257,6 +258,7 @@ label {
     position: relative;
     top: 80px;
     font-size: 17px;
+    /* height: auto; */
 }
 
 .divforgot {
@@ -382,7 +384,84 @@ label {
     /* overflow: auto; */
 }
 
+.lea {
+    margin-left: 40%;
+}
+
+@media only screen and (max-width:1000px) {
+    .divfor {
+        padding: 70px;
+        margin-left: 23%;
+        margin-right: 10%;
+        padding: 3%;
+        padding-bottom: 1%;
+        text-align: center;
+        margin-top: 0%;
+        color: #333;
+        background-color: #fff;
+        border-radius: 6px;
+        width: 50%;
+        /* max-height: 100vh; */
+        overflow: auto;
+        height: 70%;
+        /* max-height: 70vh; */
+        /*(New) By Aalzughibi*/
+        position: relative;
+        top: 80px;
+        font-size: 17px;
+        /* height: auto; */
+    }
+    .dw {
+        background: rgba(197, 195, 195, 0.527);
+        width: 90%;
+        text-align: left;
+        padding: 1%;
+        border-radius: 6px;
+        float: left;
+        margin: 10px;
+        word-wrap: break-word;
+        height: 85px;
+        height: auto;
+        /* display:; */
+    }
+}
+
 @media only screen and (max-width:750px) {
+    .divfor {
+        padding: 70px;
+        margin-left: 18%;
+        margin-right: 10%;
+        padding: 3%;
+        padding-bottom: 1%;
+        text-align: center;
+        margin-top: 0%;
+        color: #333;
+        background-color: #fff;
+        border-radius: 6px;
+        width: 60%;
+        /* max-height: 100vh; */
+        overflow: auto;
+        height: 70%;
+        /* max-height: 70vh; */
+        /*(New) By Aalzughibi*/
+        position: relative;
+        top: 80px;
+        font-size: 17px;
+        /* height: auto; */
+    }
+    .dw {
+        background: rgba(197, 195, 195, 0.527);
+        width: 90%;
+        text-align: left;
+        padding: 1%;
+        border-radius: 6px;
+        float: left;
+        margin: 10px;
+        word-wrap: break-word;
+        height: 85px;
+        height: auto;
+        /* display:; */
+    }
     .btnr {
         border-radius: 6px;
         border: solid 1px rgb(10, 135, 255);
@@ -496,6 +575,44 @@ label {
         padding: 1%;
         text-align: center;
         height: auto;
+    }
+}
+
+@media only screen and (max-width:590px) {
+    .divfor {
+        padding: 70px;
+        margin-left: 8%;
+        margin-right: 10%;
+        padding: 3%;
+        padding-bottom: 1%;
+        text-align: center;
+        margin-top: 0%;
+        color: #333;
+        background-color: #fff;
+        border-radius: 6px;
+        width: 80%;
+        /* max-height: 100vh; */
+        overflow: auto;
+        height: 70%;
+        /* max-height: 70vh; */
+        /*(New) By Aalzughibi*/
+        position: relative;
+        top: 80px;
+        font-size: 17px;
+        /* height: auto; */
+    }
+    .dw {
+        background: rgba(197, 195, 195, 0.527);
+        width: 90%;
+        text-align: left;
+        padding: 1%;
+        border-radius: 6px;
+        float: left;
+        margin: 10px;
+        word-wrap: break-word;
+        height: 85px;
+        height: auto;
+        /* display:; */
     }
 }
 

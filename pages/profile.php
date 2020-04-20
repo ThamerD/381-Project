@@ -13,10 +13,6 @@
 <div class="divfor" id="coBody">
 <div style="background-color: rgba(98, 99, 100, 0.39);border-radius: 10px;height: auto;padding:1%;">
 <table>
-    <!-- <thead> 
-<th>1</th>
-<th>2</th>
-    </thead> -->
 <tr rowspan="2">
 <td rowspan="2" ><img src="..\img\download.png" alt="img user"  width="80px" style="border-radius:50%;"> 
 
@@ -46,13 +42,9 @@ echo "</tr>";
 echo "</table>";
 
 echo "</div>";
+mysqli_close($conn);
 ?>
-<!-- 
-<div  style="background-color: rgba(98, 99, 100, 0.39);border-radius: 10px;height: auto;padding:1%;">
-<img src="..\img\download.png" alt="img user" class="dfdf"  width="80px" style="border-radius:50%;margin:0%;">
-</div> 
-<label class="lep"><b><i class='fa'>&#xf095;</i> name useeeeeer </b><br></label> 
-<label class="leep"><b><i class='fa'>&#xf095;</i> nakkkkkkkkkkkkkkkkkkkkeeeer </b><br></label>   -->
+
 <?php
 if(isset($_COOKIE['login']))
 if($_GET['email'] !=$_COOKIE['login']){
@@ -62,10 +54,8 @@ if($_GET['email'] !=$_COOKIE['login']){
 
 }
 else{
-    echo "<form action='' >
-    <input type='submit' class='btnf' value='edit profile'>
-    </form><br>";
-
+ 
+    echo "<a class='btnf' href='liveChat.php?email=".$_GET['email']."'>edit</a><br>"; 
 
 }
 ?>
@@ -83,7 +73,8 @@ else{
             <div class = 'dw' style=' text-align: left;' >
             <a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                 <p>subject: {$row['PRODUCT_NAME']}</p>
-                <p>Type:{$row['CATEGORY']}  <label style='margin-left:60%;'>price:{$row['PRICE']} SAR</label></p>
+                <p>Type:{$row['CATEGORY']} </p> 
+                <p>price:{$row['PRICE']} SAR</p>
             
                 </a>
         </div>
