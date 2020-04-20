@@ -223,6 +223,7 @@ label {
     margin: 10px;
     font-size: 14px;
     margin-right: 1%;
+    z-index: -1;
 }
 
 .btnr:hover {
