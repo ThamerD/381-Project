@@ -23,7 +23,7 @@
              echo "
              <div class='card-inbox'>
              <img  src='https://profiles.utdallas.edu/img/default.png' width='50px' height ='50px' class ='profile-img padding-inbox' alt=''>
-                 <p  class='profile-img padding-inbox' ><a href='liveChat.php?{$row['from_user']}'>{$row['from_user']}</a></p>
+                 <p  class='profile-img padding-inbox' ><a href='liveChat.php?email={$row['from_user']}'>{$row['from_user']}</a></p>
                  
          </div>
              ";
