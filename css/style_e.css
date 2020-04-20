@@ -182,21 +182,69 @@ label {
 
 /* albra start */
 
+.dw {
+    background: rgba(197, 195, 195, 0.527);
+    width: 90%;
+    text-align: left;
+    padding: 1%;
+    border-radius: 6px;
+    float: left;
+    margin: 10px;
+    word-wrap: break-word;
+    height: 85px;
+}
+
+.btnf {
+    border-radius: 6px;
+    /* border: solid 1px rgb(119, 136, 153); */
+    border: solid 1px rgb(10, 135, 255);
+    /* background: rgb(119, 136, 153); */
+    background: rgb(10, 135, 255);
+    color: white;
+    padding: 8px;
+    width: 75px;
+    margin: 10px;
+    font-size: 14px;
+    margin-right: 1%;
+    /* z-index: -1; */
+    position: relative;
+    top: -32px;
+    left: 110%;
+}
+
 .lep {
     position: relative;
-    top: -55px;
-    left: 100px;
+    top: -60px;
+    left: -27%;
     /* color: blue; */
 }
 
-.divprof {
-    margin-top: 10%;
-    margin-left: 30%;
+.dfdf {
+    position: relative;
+    top: -10%;
+    left: -44%;
+}
+
+.divfor {
+    padding: 70px;
+    margin-left: 29%;
+    margin-right: 10%;
+    padding: 3%;
+    padding-bottom: 1%;
+    text-align: center;
+    margin-top: 0%;
+    color: #333;
+    background-color: #fff;
+    border-radius: 6px;
     width: 40%;
-    height: 60%;
-    background-color: white;
-    border-radius: 10px;
-    padding: 1%;
+    /* max-height: 100vh; */
+    overflow: auto;
+    height: 70%;
+    /* max-height: 70vh; */
+    /*(New) By Aalzughibi*/
+    position: relative;
+    top: 80px;
+    font-size: 17px;
 }
 
 .divforgot {
@@ -223,7 +271,7 @@ label {
     margin: 10px;
     font-size: 14px;
     margin-right: 1%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .btnr:hover {
@@ -624,7 +672,7 @@ label {
 
 .message-content {
     padding: 1;
-    margin-bottom: 10px;
+    margin: 0px;
     /* background-color: #1ce799; */
     width: auto;
 }
@@ -934,8 +982,7 @@ label {
 }
 
 .catSelect {
-    font-size: 23px;
-    margin-bottom: 0.5cm;
+    font-size: 23px
 }
 
 .km {
