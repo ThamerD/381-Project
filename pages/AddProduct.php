@@ -128,7 +128,9 @@ include_once "base.php"; ?>
                 <!-- <label for="price">Price:</label>
                 <input name="price" class="field" id="currency-field" type="number" min="0.01" step="any" onblur="priceEmpty()"> -->
                 <label for="currency-field">Price:</label>
-                <input type="text" class="field" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                <!-- <input type="text" class="field" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" -->
+                <input type="text" class="field" name="currency-field" id="currency-field" pattern="^\\d{1,3}(,\d{3})*(\.\d+)?"
+
                  value="" data-type="currency" onblur="priceEmpty()" required>
             </div>
 

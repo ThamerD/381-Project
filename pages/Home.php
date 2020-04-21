@@ -113,6 +113,7 @@
            $conn =new mysqli('localhost', 'root', '' , '381_db');
            $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 14");
            while( $row = mysqli_fetch_assoc( $result ) ){
+            $pPrice = $row['PRICE'];
             // echo "$row";
             // <p>{$row['PRODUCT_NAME']}</p>
             // <p>{$row['PRODUCT_ID']}</p>
@@ -124,7 +125,7 @@
             <a href='product.php?ID={$row['PRODUCT_ID']}' style='text-decoration: none;'>
                 <p>{$row['PRODUCT_NAME']}</p>
                 <p>Type: {$row['CATEGORY']}</p>
-                <p>{$row['PRICE']}</p>
+                <p>$$pPrice</p>
                 </a>
         </div>
             ";

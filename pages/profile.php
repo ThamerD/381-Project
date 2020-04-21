@@ -73,13 +73,14 @@ else{
            $conn =new mysqli('localhost', 'root', '' , '381_db');
            $result = mysqli_query($conn,"SELECT * FROM `product` WHERE EMAIL='".$_GET['email']."'");
            while( $row = mysqli_fetch_assoc( $result ) ){
+            $pPrice = $row['PRICE'];
             echo
             "
             <div class = 'dw' style=' text-align: left;' >
             <a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                 <p>subject: {$row['PRODUCT_NAME']}</p>
                 <p>Type:{$row['CATEGORY']} </p> 
-                <p>price:{$row['PRICE']} SAR</p>
+                <p>price:$$pPrice</p>
             
                 </a>
         </div>

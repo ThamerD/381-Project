@@ -28,9 +28,11 @@
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result))
                 {
+                    $pPrice = $row['PRICE'];
+
                     echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                     <p>subject: {$row['PRODUCT_NAME']}</p>
-                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']}</p>
+                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
     
                     </a></div>";
                     // echo $row['PRODUCT_NAME'];
@@ -42,7 +44,7 @@
                 $pPriceFrom = isset($_POST['priceFrom']) ? $_POST['priceFrom'] : null;
                 $pPriceUntil = isset($_POST['priceUntil']) ? $_POST['priceUntil'] : null;
                 $pCat = isset($_POST['category']) ? $_POST['category'] : null;
-                echo $pCat;
+                // echo $pCat;
                 $pCondBook = isset($_POST['bCond']) ? $_POST['bCond'] : null;
                 $pAuth = isset($_POST['author']) ? $_POST['author'] : null;
                 $pISBN = isset($_POST['isbn']) ? $_POST['isbn'] : null;
@@ -63,9 +65,11 @@
                 $sql = "SELECT * FROM `product` WHERE ((`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`CATEGORY`='Books')) AND ((`BOOK_AUTHOR` LIKE '%{$pAuth}%') AND  (`BOOK_CONDITION` = '{$pCondBook}'))";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
+                                        $pPrice = $row['PRICE'];
+
                     echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                     <p>subject: {$row['PRODUCT_NAME']}</p>
-                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
     
                     </a></div>";
                 }
@@ -74,9 +78,11 @@
                     $sql = "SELECT * FROM `product` WHERE (`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`BRAND` LIKE '%{$pBrand}%') AND (`CAR_ODO` >= {$pOdo}) AND (`USED` LIKE '%{$pCondCar}%') AND (`CAR_YEAR` = {$pModel})";
                     $result = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($result)){
+                        $pPrice = $row['PRICE'];
+
                         echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                         <p>subject: {$row['PRODUCT_NAME']}</p>
-                        <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                        <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
         
                         </a></div>";
                     }
@@ -85,9 +91,11 @@
                     $sql = "SELECT * FROM `product` WHERE (`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil})";
                     $result = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($result)){
+                        $pPrice = $row['PRICE'];
+
                         echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                         <p>subject: {$row['PRODUCT_NAME']}</p>
-                        <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                        <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
         
                         </a></div>";
                     }
@@ -97,9 +105,11 @@
                  $sql = "SELECT * FROM `product` WHERE (`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`GENRE` LIKE '%{$pGener}%') AND (`GAME_PLATFORM` LIKE '%{$pGener}%')";
                  $result = mysqli_query($conn,$sql);
                  while($row = mysqli_fetch_assoc($result)){
+                    $pPrice = $row['PRICE'];
+
                      echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                      <p>subject: {$row['PRODUCT_NAME']}</p>
-                     <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                     <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
      
                      </a></div>";
                  }
@@ -108,9 +118,11 @@
                  $sql = "SELECT * FROM `product` WHERE (`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`GENRE` LIKE '%{$pGener}%') AND (`MOVIE_YEAR` = {$pYear})";
                  $result = mysqli_query($conn,$sql);
                  while($row = mysqli_fetch_assoc($result)){
+                    $pPrice = $row['PRICE'];
+
                      echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                      <p>subject: {$row['PRODUCT_NAME']}</p>
-                     <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                     <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:$$pPrice</p>
      
                      </a></div>";
                  }

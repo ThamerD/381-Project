@@ -121,7 +121,7 @@ echo"
   <h3 style='text-align: center;'>$pName</h3>
     <!-- <h3 style='text-align: center;'>ASUS VivoBook S15 S532 Thin & Light 15.6' FHD, Intel Core i7-8565U CPU, 8 GB DDR4 RAM, PCIe NVMe 512 GB SSD, Windows 10 Home, S532FA-SB77, Transparent Silver</h3> -->
     <hr>
-    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$pPrice</span></p>
+    <p style='font-size: 20px; margin: 0%'>Price: <span id='prc' style='color: firebrick;'>$$pPrice</span></p>
     <br>
     <p style='white-space: pre-wrap;'>$pDesc</p>
     <hr>";
