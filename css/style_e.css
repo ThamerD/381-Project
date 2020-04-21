@@ -1032,6 +1032,7 @@ label {
     float: left;
     margin: 10px;
     word-wrap: break-word;
+    text-decoration: none;
 }
 
 .newestProduct:nth-child(odd) {
