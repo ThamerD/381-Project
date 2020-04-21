@@ -10,12 +10,13 @@
 
     <?php
 $conn=mysqli_connect('localhost','root','','381_db');
-if(!isset($_COOKIE["login"])){
-    header("Location:sign_in.php");
-    }
+
 
 $mail=$_COOKIE['login'];
 $prod = mysqli_query($conn,"SELECT * FROM `user` WHERE email ='".$mail."'");
+if(!isset($_COOKIE["login"])){
+    header("Location:sign_in.php");
+    }
 if(!$prod){
     echo "you can not access database";
 }
@@ -30,13 +31,13 @@ $pass=$row['USER_PASS'];
 $nameErr="";
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!preg_match("/^[A-Za-z0-9-_]{2,31}$/",$_POST["fName"])){
-        $nameErr.=" &#10006; Enter a valid user name:<br>";  
+        $nameErr.=" &#10006; Enter a valid user name<br>";  
     }
      else if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
        $nameErr.="&#10006; pleas enter valid phone number<br>"; 
      }
      else if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
-        $nameErr.=" &#10006; your password must be contain [number,chars,space]only:<br>";  
+        $nameErr.=" &#10006; your password must be contain [number,chars,space]only<br>";  
     }
    
     else if(strlen($_POST["pass"])<8){
@@ -91,6 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 ";
 
 if (mysqli_query($conn, $sql)) {
+   
+    mysqli_close($conn);
+    mysqli_close($prod);
+    header("Location:edit_profile.php");
+
+
     // echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -131,7 +138,9 @@ if (mysqli_query($conn, $sql)) {
     
 
 
-
+// if (isset($_GET['comp'])) {
+//     echo("<div style='padding:1%;color: rgb(7, 128, 3);border: 1px solid red;border-color: rgba(142, 243, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(142, 243, 95, 0.322);  text-align: left;''>&#10004; " . $_GET['comp'] . "</div>");
+// }
 
 echo "<div class='divSignUp'>
 
