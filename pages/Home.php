@@ -32,7 +32,7 @@
     }
   
 	ul.typeahead.dropdown-menu li a {
-        padding: 10px !important;
+        padding:10px !important;
         /* border-bottom:#CCC 1px solid; */
         color:#FFF;
         /* text-decoration: none; */
@@ -48,7 +48,9 @@
         /* text-decoration: none; */
     }
     .dropdown-menu{
+        /* text-align:left; */
         /* background:red; */
+        marign-right:100px
         /* background-color: #fffff1; */
     }
 	.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
@@ -56,7 +58,9 @@
 		color: black;
 		/* background: black; */
 		/* outline: 0; */
-	}
+    }
+    
+    
 	</style>
 <body>
     <?php include_once "base.php"; ?>
@@ -69,11 +73,13 @@
             <p id="error-Search">Please fill the field</p>  
             <form action="listProduct.php" method="POST">
 
-                <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput">
-                
+                <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput" autocomplete="off">
+                <a href=""></a>
+                <!-- <img src="../img/searchLogo.png" width='25px' height='25px' style="position:fixed; left:76%; top:23.5%" alt=""> -->
+                <input type="image" src="../img/searchLogo.png" alt="Submit Form" width='25px' height='25px'   style="position:fixed; left:76%; top:23.5%" />
             </div>
+            <!-- <input type="submit"  class='btn btnSea'  id="myBtn-Home" value="Search" > -->
         </div>
-        <input type="submit" style='position:relative;left:45vw;top:9vh;' class='btn btnSea'  id="myBtn-Home" value="Search" >
     </form>
     
     <script>
