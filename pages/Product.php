@@ -13,7 +13,7 @@
         .coBody{
             /* width: 1400px; */
             padding: 10px;
-            height:90%;
+            /* height:auto; */
 
         }
           /* Position the image container (needed to position the left and right arrows) */
@@ -54,7 +54,7 @@
 <?php include_once "base.php";
 
 ?>
-<div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
+<div class="coBody xyz" id="coBody" style="margin: auto; margin-top: 1cm;">
 
 <?php 
 $conn=mysqli_connect("localhost","root","","381_db");

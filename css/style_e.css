@@ -38,6 +38,7 @@ label {
     margin-top: 0px;
     position: fixed;
     top: 0px;
+    z-index: 1;
     /* clear: both; */
 }
 
@@ -120,13 +121,15 @@ label {
     border-radius: 6px;
     width: 80%;
     min-height: 40vh;
+    height: auto;
     /* max-height: 100vh; */
-    /* overflow: auto; */
+    overflow: auto;
     /* max-height: 70vh; */
     /*(New) By Aalzughibi*/
     position: relative;
-    top: 40px;
+    top: 0px;
     font-size: 17px;
+    z-index: 0;
 }
 
 .sideBar {
@@ -255,7 +258,8 @@ label {
     width: 40%;
     /* max-height: 100vh; */
     overflow: auto;
-    height: 70%;
+    height: auto;
+    /* height: 70%; */
     /* max-height: 70vh; */
     /*(New) By Aalzughibi*/
     position: relative;
@@ -391,6 +395,7 @@ label {
     margin-left: 40%;
 }
 
+
 @media only screen and (max-width:1000px) {
     .divfor {
         padding: 70px;
@@ -405,8 +410,9 @@ label {
         border-radius: 6px;
         width: 50%;
         /* max-height: 100vh; */
-        overflow: auto;
-        height: 70%;
+        /* overflow: auto; */
+        height: auto;
+        /* height: 70%; */
         /* max-height: 70vh; */
         /*(New) By Aalzughibi*/
         position: relative;
@@ -759,9 +765,9 @@ label {
     position: relative;
     top: 12vh;
     /* bottom: 70vh; */
-    left: 8%;
+    left: 10%;
     /* right: 0%; */
-    width: 60%;
+    width: 65%;
     border-radius: 1%;
     /* display: block; */
 }
@@ -1048,7 +1054,10 @@ label {
 
 .newestProduct {
     /* background: red; */
-    width: 9%;
+    width: 10%;
+    max-width: 130px;
+    height: 200px;
+    /* max-height: ; */
     text-align: left;
     padding: 1%;
     border-radius: 6px;
@@ -1089,9 +1098,9 @@ label {
 /* End Home.php */
 
 .btn2 {
-    position: fixed;
-    bottom: 110px;
-    right: 47%;
+    position: absolute;
+    bottom: 0px;
+    right: 40%;
     /* top: 5vh;
     right: 6vw; */
     /* bottom: -300px; */
@@ -1398,6 +1407,69 @@ label {
         float: none;
         background: gray;
         width: 90%;
+        max-width: 100000px;
+        max-height: 100000px;
+        height: auto;
         margin: 10px;
+    }
+}
+.btnSearch{
+    position:relative; right:4%; top:1vh;
+}
+.xyz{
+    position:relative;  top:6vh;
+}
+.xyz1{
+    position:relative;  top:10vh;
+}
+@media only screen and (max-width:1199px ) {
+    .xyz{
+        position:relative;  top:10vh;
+    }
+}
+/*ipad pro  */
+@media only screen and (max-width:1024px ) {
+    .btnSearch{
+        position:relative; right:5%; top:0.5vh;
+    }
+}
+/* ipad */
+@media only screen and (max-width:768px ) {
+    .btnSearch{
+        position:relative; right:7%; top:0.8vh;
+    }
+    .text-for-message {
+        position: relative;
+        top: 12vh;
+        /* bottom: 70vh; */
+        left: 8%;
+        /* right: 0%; */
+        width: 60%;
+        border-radius: 1%;
+        /* display: block; */
+    }
+}
+/* iphone 6/7/8 plus */
+@media only screen and (max-width:414px ) {
+    .btnSearch{
+        position:relative; right:14%; top:0.8vh;
+    }
+}
+/* pixel 2 XL */
+@media only screen and (max-width:411px ) {
+    .btnSearch{
+        position:relative; right:12%; top:0.8vh;
+    }
+}
+/* iphone x */
+@media only screen and (max-width:375px ) {
+    .btnSearch{
+        position:relative; right:12%; top:0.8vh;
+    }
+}
+/* iphone 5/SE */
+@media only screen and (max-width:320px ) {
+    .btnSearch{
+        position:relative; left:33%; top:-6vh;
     }
 }

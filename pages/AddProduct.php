@@ -24,7 +24,7 @@
             width: 92%;
             max-width: 400px;
             /* background-color: pink; */
-
+            
         }
 
             form{
@@ -98,7 +98,7 @@ echo "<script> location.href='../pages/sign_in.php'; </script>";
 }
 
 include_once "base.php"; ?>
-    <div class="coBody" id="coBody" style="margin: auto; margin-top: 1cm;">
+    <div class="coBody xyz" id="coBody" style="margin: auto; margin-top: 1cm;">
 
         <h2 style="margin-top: 0cm;">Add a Product</h2>
         <br>

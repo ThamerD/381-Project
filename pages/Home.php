@@ -76,7 +76,7 @@
                 <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput" autocomplete="off">
                 <a href=""></a>
                 <!-- <img src="../img/searchLogo.png" width='25px' height='25px' style="position:fixed; left:76%; top:23.5%" alt=""> -->
-                <input type="image" src="../img/searchLogo.png" alt="Submit Form" width='25px' height='25px'   style="position:fixed; left:76%; top:30.5%" />
+                <input type="image" src="../img/searchLogo.png" alt="Submit Form" width='25px' height='25px'   class="btnSearch" />
             </div>
             <!-- <input type="submit"  class='btn btnSea'  id="myBtn-Home" value="Search" > -->
         </div>
@@ -102,7 +102,7 @@
         });
     });
 </script>
-    <div class="coBody coBody-HeightValue">
+    <div class="coBody coBody-HeightValue" id="coBody">
 
         <!-- <div class = "newestProduct">
             <p>subject: MW3</p>
@@ -111,7 +111,7 @@
         </div> -->
         <?php
            $conn =new mysqli('localhost', 'root', '' , '381_db');
-           $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 16");
+           $result = mysqli_query($conn,"SELECT * FROM `product` ORDER BY PRODUCT_ID DESC LIMIT 14");
            while( $row = mysqli_fetch_assoc( $result ) ){
             // echo "$row";
             // <p>{$row['PRODUCT_NAME']}</p>
