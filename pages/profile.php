@@ -17,6 +17,9 @@
 <td rowspan="2" ><img src="..\img\download.png" alt="img user"  width="80px" style="border-radius:50%;"> 
 
 <?php
+if(!isset($_COOKIE["login"])){
+    echo "<script> location.href='../pages/sign_in.php'; </script>";
+    }
 echo "</td>";
 $conn =new mysqli('localhost', 'root', '' , '381_db');
 $sql="SELECT * FROM `user` WHERE EMAIL='".$_GET['email']."'";
@@ -55,7 +58,7 @@ if($_GET['email'] !=$_COOKIE['login']){
 }
 else{
  
-    echo "<a class='btnf' href='edit_profile.php?email=".$_GET['email']."'>edit</a><br>"; 
+    echo "<a class='btnf' href='edit_profile.php?mail=".$_GET['email']."'>edit</a><br>"; 
 
 }
 ?>
