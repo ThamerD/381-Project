@@ -41,8 +41,14 @@
             else
             {
                 $pDesc = isset($_POST['name']) ? $_POST['name'] : null;
-                $pPriceFrom = isset($_POST['priceFrom']) ? $_POST['priceFrom'] : null;
-                $pPriceUntil = isset($_POST['priceUntil']) ? $_POST['priceUntil'] : null;
+                $pPriceFrom = isset($_POST['priceFrom']) ? $_POST['priceFrom'] : 0;
+                if ($pPriceFrom==null)
+                $pPriceFrom=0;
+
+
+                $pPriceUntil = isset($_POST['priceUntil']) ? $_POST['priceUntil'] : 1000000;
+                if ($pPriceUntil==0)
+                $pPriceUntil=1000000;
                 $pCat = isset($_POST['category']) ? $_POST['category'] : null;
                 // echo $pCat;
                 $pCondBook = isset($_POST['bCond']) ? $_POST['bCond'] : null;
@@ -59,10 +65,17 @@
                 $pGener = isset($_POST['gener']) ? $_POST['gener'] : null;
                 $pPlatform = isset($_POST['platform']) ? $_POST['platform'] : null;
                 $pYear = isset($_POST['releaseYear']) ? $_POST['releaseYear'] : null;
+
+                // echo $pPriceFrom;
+            //    echo $pPriceUntil;
+            //    echo $pYear;
+
                
                if($pCat=="Books")
                {
                 $sql = "SELECT * FROM `product` WHERE ((`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`CATEGORY`='Books')) AND ((`BOOK_AUTHOR` LIKE '%{$pAuth}%') AND  (`BOOK_CONDITION` = '{$pCondBook}'))";
+                // $sql = "SELECT * FROM `product` WHERE ((`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {'0'} AND {'100000'}) AND (`CATEGORY`='Books')) AND ((`BOOK_AUTHOR` LIKE '%{$pAuth}%') AND  (`BOOK_CONDITION` = '{$pCondBook}'))";
+
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
                                         $pPrice = $row['PRICE'];
