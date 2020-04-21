@@ -63,7 +63,7 @@ if(!isset($_COOKIE["login"])){
     <!-- <br> -->
     <div id="alternativeEle">
         <input type="text"  class="text-F LeftWidth" name='author' id="authorId" onblur="isEmpty('authorId')" placeholder="Author" >
-        <input type="text" class="text-F RightWidth" name='isbn' id="isbnId" onblur="isEmpty('isbnId')"  placeholder="ISBN">
+        <!-- <input type="text" class="text-F RightWidth" name='isbn' id="isbnId" onblur="isEmpty('isbnId')"  placeholder="ISBN"> -->
         <select class="text-F LeftWidth" id="idid" name='bCond' onblur="checkSelect('idid')">
             <option value="Choose here"  class="hideOption" hidden="">Choose here</option>
             <option value="Very Good">Very Good</option>
@@ -131,7 +131,7 @@ if(!isset($_COOKIE["login"])){
         function BookAtt(){//done
             deleteChildInAlternativeEle();
             AddElementForm ("alternativeEle","input","text","isEmpty('authorId')","author","text-F LeftWidth","authorId","","","Author");
-            AddElementForm ("alternativeEle","input","text","isEmpty('isbnId')","isbn","text-F RightWidth","isbnId","","","ISBN");
+            // AddElementForm ("alternativeEle","input","text","isEmpty('isbnId')","isbn","text-F RightWidth","isbnId","","","ISBN");
             addSelectForm("alternativeEle",'bCond',"text-F LeftWidth","idid","checkSelect('idid')","Choose here","Very Good","Good","Fair","Poor");
             hideLabelOption();
         }

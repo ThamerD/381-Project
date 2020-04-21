@@ -30,7 +30,7 @@
                 {
                     echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>
                     <p>subject: {$row['PRODUCT_NAME']}</p>
-                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']} SAR</p>
+                    <p>Type:{$row['CATEGORY']} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; price:{$row['PRICE']}</p>
     
                     </a></div>";
                     // echo $row['PRODUCT_NAME'];
@@ -60,7 +60,7 @@
                
                if($pCat=="Books")
                {
-                $sql = "SELECT * FROM `product` WHERE (`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`CATEGORY`='Books') AND (`BOOK_AUTHOR` LIKE '%{$pAuth}%') AND (`BOOK_ISBN` LIKE '%{$pISBN}%') AND (`BOOK_CONDITION` = '{$pCondBook}')";
+                $sql = "SELECT * FROM `product` WHERE ((`PRODUCT_NAME` LIKE '%{$pDesc}%') AND (`PRICE` BETWEEN {$pPriceFrom} AND {$pPriceUntil}) AND (`CATEGORY`='Books')) AND ((`BOOK_AUTHOR` LIKE '%{$pAuth}%') AND  (`BOOK_CONDITION` = '{$pCondBook}'))";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class = 'dw' style=' text-align: left;' ><a style=' text-decoration: none;color:black;' href='product.php?ID={$row['PRODUCT_ID']}'>

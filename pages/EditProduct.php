@@ -124,7 +124,7 @@ $pPlatform =  $row['GAME_PLATFORM'];
 $pYear =  $row['MOVIE_YEAR'];
 
 echo"
-    <div class='coBody' id='coBody' style='margin: auto; margin-top: 1cm;'>
+    <div class='coBody xyz1' id='coBody' style='margin: auto; margin-top: 1cm;'>
 
         <h2 style='margin-top: 0cm;'>Edit a Product</h2>
         <br>

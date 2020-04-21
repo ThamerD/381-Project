@@ -153,13 +153,13 @@ if (isset($_GET['comp'])) {
       echo  "<div id='signat' style='background-color:black;padding-top:0%;' ></div>
         <form method='post' action='".$_SERVER['PHP_SELF']."' >
         <div > ".$nameErr."</div> 
-          user name<input type='text' id='fName' placeholder='first name' name='fName' class='text-F' style='width:90%;margin-top:0%;' value='".$user."' required><br>
-          phone number <input size='10' name='phone' maxlength='10' type='text' id='phon' placeholder='0555555555' class='text-F' id='number' style='width: 90%;' value='".$phone."' required ><br> Email address           <input type='email' id='email' placeholder='example@gmail.com' class='text-F' style='width: 90%;' value='".$email."' name='email' required><br> password
-            <input type='text' id='pass' value='".$pass."' placeholder='password' class='text-F' style='width: 90%;'' name='pass' required><br> 
+          user name<input type='text' id='fName' placeholder='first name' name='fName' class='text-F' style='width:90%;margin-top:0%; height:25px;' value='".$user."' required><br>
+          phone number <input size='10' name='phone' maxlength='10' type='text' id='phon' placeholder='0555555555' class='text-F' id='number' style='width: 90%;height:25px;' value='".$phone."' required ><br> Email address <input type='email' id='email' placeholder='example@gmail.com' class='text-F ' style='width: 90%;height:25px;' value='".$email."' name='email' required><br> password
+            <input type='text' id='pass' value='".$pass."' placeholder='password' class='text-F' style='width: 90%;height:25px;'' name='pass' required><br> 
                
             <div style='text-align: center;'>
-                <input type='submit' value='save' style='width:12%;' class='btn' > 
-                <a class='btn'style='text-decoration: none;width:10%;' href='Home.php'>cancel</a><br> 
+                <input type='submit' value='save'class='btnr'   > 
+                <a class='btn'style='text-decoration: none;width:75px;' href='Home.php'>cancel</a><br> 
         </form>
         </div>
 

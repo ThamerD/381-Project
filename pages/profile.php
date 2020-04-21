@@ -5,6 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style_e.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body style="text-align:left;">
 
@@ -58,7 +59,8 @@ if($_GET['email'] !=$_COOKIE['login']){
 }
 else{
  
-    echo "<a class='btnf' href='edit_profile.php?mail=".$_GET['email']."'>edit</a><br>"; 
+    echo "<a class='btnf' style='padding-top:4%' href='edit_profile.php?mail=".$_GET['email']."'><i class='material-icons'>&#xe22b;</i></a><br>";
+    // echo "<a class='btnf' href='edit_profile.php?mail=".$_GET['email']."'>edit</a><br>"; 
 
 }
 ?>

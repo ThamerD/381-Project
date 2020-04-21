@@ -1414,7 +1414,7 @@ label {
     }
 }
 .btnSearch{
-    position:relative; right:4%; top:1vh;
+    position:relative; left:73%; top:1vh;
 }
 .xyz{
     position:relative;  top:6vh;
@@ -1430,7 +1430,8 @@ label {
 /*ipad pro  */
 @media only screen and (max-width:1024px ) {
     .btnSearch{
-        position:relative; right:5%; top:0.5vh;
+        /* position:relative; right:5%; top:0.5vh; */
+        position:relative; left:73%; top:0.5vh;
     }
 }
 /* ipad */
@@ -1464,12 +1465,14 @@ label {
 /* iphone x */
 @media only screen and (max-width:375px ) {
     .btnSearch{
-        position:relative; right:12%; top:0.8vh;
+        position:relative; right:150%; top:0.8vh;
+        
     }
 }
 /* iphone 5/SE */
 @media only screen and (max-width:320px ) {
     .btnSearch{
-        position:relative; left:33%; top:-6vh;
+        /* position:relative; left:33%; top:-6vh; */
+        position:relative; left:30%; top:7vh;
     }
 }
