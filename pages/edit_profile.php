@@ -10,12 +10,13 @@
 
     <?php
 $conn=mysqli_connect('localhost','root','','381_db');
-if(!isset($_COOKIE["login"])){
-    header("Location:sign_in.php");
-    }
+
 
 $mail=$_COOKIE['login'];
 $prod = mysqli_query($conn,"SELECT * FROM `user` WHERE email ='".$mail."'");
+if(!isset($_COOKIE["login"])){
+    header("Location:sign_in.php");
+    }
 if(!$prod){
     echo "you can not access database";
 }
@@ -91,6 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 ";
 
 if (mysqli_query($conn, $sql)) {
+    header("Location:edit_profile.php");
+    mysqli_close($conn);
+    mysqli_close($prod);
+
+
+
     // echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -131,7 +138,9 @@ if (mysqli_query($conn, $sql)) {
     
 
 
-
+// if (isset($_GET['comp'])) {
+//     echo("<div style='padding:1%;color: rgb(7, 128, 3);border: 1px solid red;border-color: rgba(142, 243, 95, 0.322);width:80%;margin-left:10%; border-radius: 3px;background-color: rgba(142, 243, 95, 0.322);  text-align: left;''>&#10004; " . $_GET['comp'] . "</div>");
+// }
 
 echo "<div class='divSignUp'>
 
