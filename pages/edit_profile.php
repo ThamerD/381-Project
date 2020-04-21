@@ -95,7 +95,7 @@ if (mysqli_query($conn, $sql)) {
    
     mysqli_close($conn);
     mysqli_close($prod);
-    header("Location:edit_profile.php");
+    header("Location:edit_profile.php?comp=Saved successfully");
 
 
     // echo "New record created successfully";
@@ -144,10 +144,13 @@ if (mysqli_query($conn, $sql)) {
 
 echo "<div class='divSignUp'>
 
-<div style='text-align:center;'><h1>EDIT A PROFILE</h1></div>
+<div style='text-align:center;'><h1>EDIT A PROFILE</h1></div>";
     
+if (isset($_GET['comp'])) {
+    echo("<div style='padding:1%;color: rgb(7, 128, 3);border: 1px solid red;border-color: rgba(142, 243, 95, 0.322);width:80%;margin-left:5%; border-radius: 3px;background-color: rgba(142, 243, 95, 0.322);  text-align: left;''>&#10004; " . $_GET['comp'] . "</div>");
+}
 
-        <div id='signat' style='background-color:black;padding-top:0%;' ></div>
+      echo  "<div id='signat' style='background-color:black;padding-top:0%;' ></div>
         <form method='post' action='".$_SERVER['PHP_SELF']."' >
         <div > ".$nameErr."</div> 
           user name<input type='text' id='fName' placeholder='first name' name='fName' class='text-F' style='width:90%;margin-top:0%;' value='".$user."' required><br>
