@@ -13,7 +13,7 @@
         .coBody{
             /* width: 1400px; */
             padding: 10px;
-            /* height:100%; */
+            height:90%;
 
         }
           /* Position the image container (needed to position the left and right arrows) */
