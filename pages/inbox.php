@@ -11,6 +11,9 @@ echo "<script> location.href='../pages/sign_in.php'; </script>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style_e.css">
 </head>
+<style>
+    
+</style>
 <body>
 <?php include_once "base.php"; ?>
 

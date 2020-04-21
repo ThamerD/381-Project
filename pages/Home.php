@@ -76,7 +76,7 @@
                 <input class="search__input typeahead" onkeyup="click_it()" type="text" placeholder="Search" id="myInput" name="myInput" autocomplete="off">
                 <a href=""></a>
                 <!-- <img src="../img/searchLogo.png" width='25px' height='25px' style="position:fixed; left:76%; top:23.5%" alt=""> -->
-                <input type="image" src="../img/searchLogo.png" alt="Submit Form" width='25px' height='25px'   style="position:fixed; left:76%; top:23.5%" />
+                <input type="image" src="../img/searchLogo.png" alt="Submit Form" width='25px' height='25px'   style="position:fixed; left:76%; top:30.5%" />
             </div>
             <!-- <input type="submit"  class='btn btnSea'  id="myBtn-Home" value="Search" > -->
         </div>

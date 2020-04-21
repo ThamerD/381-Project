@@ -18,6 +18,7 @@ if(!isset($_COOKIE["login"])){
 <style>
         .coBody{
             width: 550px;
+            min-height:500px;
             height:auto;
         }
         @media only screen and (max-width:1199px) {
