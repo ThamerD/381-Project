@@ -55,7 +55,7 @@ if($_GET['email'] !=$_COOKIE['login']){
 }
 else{
  
-    echo "<a class='btnf' href='liveChat.php?email=".$_GET['email']."'>edit</a><br>"; 
+    echo "<a class='btnf' href='edit_profile.php?email=".$_GET['email']."'>edit</a><br>"; 
 
 }
 ?>
