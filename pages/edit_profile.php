@@ -156,7 +156,7 @@ echo "<div class='divSignUp'>
                
             <div style='text-align: center;'>
                 <input type='submit' value='save' style='width:12%;' class='btn' > 
-                <a class='btn'style='text-decoration: none;width:10%;' href='Home.php'>cancel</a><br>; 
+                <a class='btn'style='text-decoration: none;width:10%;' href='Home.php'>cancel</a><br> 
         </form>
         </div>
 
