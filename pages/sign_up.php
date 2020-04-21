@@ -38,7 +38,7 @@ if(isset($_POST["fName"])){
       $num=mysqli_num_rows($res);
      
         if($num>0)
-      $nameErr.="&#10006; this name alredy used";
+      $nameErr.="&#10006; this name alredy used<br>";
     }
  if(isset($_POST["phone"])){
         $sql="SELECT * FROM `user` WHERE PHONE_NUMBER='".$_POST['phone']."'";
@@ -60,23 +60,28 @@ if(isset($_POST["fName"])){
     $nameErr.="&#10006; this email alredy exsist<br>";
      }
     }
+   
 }
 //here we will insert user input and we check every thing is good 
-if($_POST["email"] && $_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_POST["password"]){
 
-
-    $sql="INSERT INTO user VALUES ('".$_POST['fName']."','".$_POST['email']."',".$_POST['phone'].",'".$_POST['pass']."',0)";
-    $res=mysqli_query($con,$sql);
-  if($res){
-    mysqli_close($con);
-    header("Location:sign_in.php?bye=Registration completed successfully try to log in");
-  }
-else {
-    die("can not select ");
-}
-}
 if($nameErr!=""){
     $nameErr="<div  style='padding:1%; color: rgb(128, 3, 3);border: 1px solid red; border-color:  rgba(243, 95, 95, 0.322);width:80%;margin-left:0%; border-radius: 3px;background-color: rgba(243, 95, 95, 0.322);  text-align: left;' role='alert'> ".$nameErr."</div>";
+    }
+    else{
+        if($_POST["email"] && $_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_POST["password"]){
+            $sql="INSERT INTO user VALUES ('".$_POST['fName']."','".$_POST['email']."',".$_POST['phone'].",'".$_POST['pass']."',0)";
+            $res=mysqli_query($con,$sql);
+          if($res){
+            mysqli_close($con);
+            header("Location:sign_in.php?bye=Registration completed successfully try to log in");
+          }
+        else {
+            die("can not select ");
+        }
+        
+        
+        }
+
     }
 }
 ?>
