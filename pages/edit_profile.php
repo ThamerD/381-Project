@@ -31,13 +31,13 @@ $pass=$row['USER_PASS'];
 $nameErr="";
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!preg_match("/^[A-Za-z0-9-_]{2,31}$/",$_POST["fName"])){
-        $nameErr.=" &#10006; Enter a valid user name:<br>";  
+        $nameErr.=" &#10006; Enter a valid user name<br>";  
     }
      else if(!preg_match("/^[0-9]{10}$/",$_POST["phone"])){
        $nameErr.="&#10006; pleas enter valid phone number<br>"; 
      }
      else if(!preg_match('/^[\w\s?]+$/si',$_POST["pass"])){
-        $nameErr.=" &#10006; your password must be contain [number,chars,space]only:<br>";  
+        $nameErr.=" &#10006; your password must be contain [number,chars,space]only<br>";  
     }
    
     else if(strlen($_POST["pass"])<8){
@@ -92,10 +92,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 ";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location:edit_profile.php");
+   
     mysqli_close($conn);
     mysqli_close($prod);
-
+    header("Location:edit_profile.php");
 
 
     // echo "New record created successfully";
