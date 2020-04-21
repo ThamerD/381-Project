@@ -78,15 +78,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         //     }
             if($_POST["fName"] && $_POST["phone"] && $_POST["pass"] && $_POST["pass"]){
 
-                $sqly= "UPDATE `user` SET `UNAME`='{$_POST["fName"]}',`EMAIL`='{}',`PHONE_NUMBER`=554145544,`USER_PASS`='001122',`ADMIN`='0' WHERE `UNAME`='abody403'"
-               $sqli = "UPDATE `user` SET UNAME='".$_POST["fName"]."',PHONE_NUMBER=".$_POST["phone"].",USER_PASS='".$_POST["pass"]."'  WHERE EMAIL='".$_COOKIE['login']."'";
-               $sql = "UPDATE `user` SET UNAME=\'OOaaO\',PHONE_NUMBER='05050002',USER_PASS=\'12121212\' WHERE EMAIL=\'albrae-2010@hotmail.com\'";
-                $res=mysqli_query($prod,$sqli);
-                mysqli_error($res);
-              if($res){
-                mysqli_close($prod);
-                header("Location:Home.php");
-              }
+                $fn = $_POST["fName"];
+                $ph = $_POST["phone"];
+                $pa = $_POST["pass"];
+                $em = $_COOKIE['login'];
+
+                $sql = "UPDATE user SET
+                UNAME = '$fn',
+                PHONE_NUMBER = '$ph',
+                USER_PASS = '$pa'
+                WHERE EMAIL= '$em'
+                ";
+
+if (mysqli_query($conn, $sql)) {
+    // echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
+
+
+
+            //    $sqli = "UPDATE `user` SET UNAME='".$_POST["fName"]."',PHONE_NUMBER=".$_POST["phone"].",USER_PASS='".$_POST["pass"]."'  WHERE EMAIL='".$_COOKIE['login']."'";
+            //    $sql = "UPDATE `user` SET UNAME=\'OOaaO\',PHONE_NUMBER='05050002',USER_PASS=\'12121212\' WHERE EMAIL=\'albrae-2010@hotmail.com\'";
+                // $res=mysqli_query($prod,$sqli);
+                // mysqli_error($res);
+            //   if($res){
+                // mysqli_close($prod);
+                // header("Location:Home.php");
+            //   }
             }
 
 
